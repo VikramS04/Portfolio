@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 import SectionHeader from './SectionHeader';
 import { siteContent } from '../content/siteContent';
 
@@ -34,6 +35,73 @@ const links = [
 ];
 
 export default function Contact() {
+  const [form, setForm] = React.useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+  const [isSending, setIsSending] = React.useState(false);
+  const [status, setStatus] = React.useState({ type: '', text: '' });
+
+  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+  function handleChange(event) {
+    const { name, value } = event.target;
+    setForm((current) => ({ ...current, [name]: value }));
+  }
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    setStatus({ type: '', text: '' });
+
+    if (!serviceId || !templateId || !publicKey) {
+      setStatus({
+        type: 'error',
+        text: 'EmailJS is not configured yet. Add the Vite env values to enable sending.',
+      });
+      return;
+    }
+
+    setIsSending(true);
+
+    try {
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          subject: form.subject,
+          message: form.message,
+          to_name: siteContent.name,
+          reply_to: form.email,
+        },
+        publicKey
+      );
+
+      setForm({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+      });
+      setStatus({
+        type: 'success',
+        text: 'Message sent successfully. I will get back to you soon.',
+      });
+    } catch (error) {
+      setStatus({
+        type: 'error',
+        text: 'Something went wrong while sending the message. Please try again or email me directly.',
+      });
+    } finally {
+      setIsSending(false);
+    }
+  }
+
   return (
     <section id="contact" className="section-shell px-6 py-20 text-center md:px-12" style={{ background: 'rgba(11,23,40,0.58)' }}>
       <div className="mx-auto max-w-5xl">
@@ -84,23 +152,188 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.35 }}
-          className="glass-panel inline-flex flex-col items-center gap-5 rounded-[30px] px-8 py-7 md:flex-row"
+          className="grid gap-6 md:grid-cols-[1.05fr_0.95fr]"
         >
-          <div>
-            <div className="mb-1 font-mono text-[0.62rem] uppercase tracking-[0.18em]" style={{ color: 'var(--muted)' }}>
-              PRIMARY EMAIL
+          <div className="glass-panel rounded-[30px] p-6 text-left md:p-8">
+            <div className="mb-3 font-mono text-[0.7rem] uppercase tracking-[0.18em]" style={{ color: 'var(--accent2)' }}>
+              Direct Message
             </div>
-            <a
-              href={`mailto:${siteContent.email}`}
-              className="font-mono text-sm no-underline md:text-base"
-              style={{ color: 'var(--accent)' }}
+            <h3 className="mb-3 text-2xl font-bold tracking-[-0.03em]">Send me a message</h3>
+            <p className="mb-6 text-sm leading-7 md:text-base" style={{ color: 'var(--muted)' }}>
+              Use the form for collaborations, internships, freelance work, or anything interesting
+              you want to discuss. Messages go straight through EmailJS.
+            </p>
+
+            <form onSubmit={handleSubmit} className="grid gap-4">
+              <div className="grid gap-4 md:grid-cols-2">
+                <Field
+                  label="Your Name"
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
+                  placeholder="Enter your name"
+                />
+                <Field
+                  label="Your Email"
+                  name="email"
+                  type="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  placeholder="Enter your email"
+                />
+              </div>
+
+              <Field
+                label="Subject"
+                name="subject"
+                value={form.subject}
+                onChange={handleChange}
+                placeholder="What is this about?"
+              />
+
+              <Field
+                label="Message"
+                name="message"
+                value={form.message}
+                onChange={handleChange}
+                placeholder="Tell me about your idea or opportunity"
+                multiline
+              />
+
+              <button
+                type="submit"
+                disabled={isSending}
+                className="inline-flex items-center justify-center rounded-full px-5 py-4 font-mono text-[0.76rem] uppercase tracking-[0.16em] transition-all duration-200"
+                style={{
+                  background: isSending
+                    ? 'rgba(148,163,184,0.14)'
+                    : 'linear-gradient(135deg, var(--accent), #f97316)',
+                  color: isSending ? 'var(--muted)' : '#08111b',
+                  border: 'none',
+                  cursor: isSending ? 'not-allowed' : 'pointer',
+                }}
+              >
+                {isSending ? 'Sending...' : 'Send Message'}
+              </button>
+
+              {status.text && (
+                <div
+                  className="rounded-2xl px-4 py-3 text-sm leading-6"
+                  style={{
+                    background:
+                      status.type === 'success'
+                        ? 'rgba(52,211,153,0.12)'
+                        : 'rgba(248,113,113,0.12)',
+                    border:
+                      status.type === 'success'
+                        ? '1px solid rgba(52,211,153,0.18)'
+                        : '1px solid rgba(248,113,113,0.18)',
+                    color: status.type === 'success' ? 'var(--accent3)' : '#fca5a5',
+                  }}
+                >
+                  {status.text}
+                </div>
+              )}
+            </form>
+          </div>
+
+          <div className="glass-panel flex flex-col justify-between rounded-[30px] p-6 text-left md:p-8">
+            <div>
+              <div className="mb-3 font-mono text-[0.7rem] uppercase tracking-[0.18em]" style={{ color: 'var(--accent2)' }}>
+                Contact Details
+              </div>
+              <h3 className="mb-4 text-2xl font-bold tracking-[-0.03em]">Prefer direct contact?</h3>
+              <p className="mb-6 text-sm leading-7 md:text-base" style={{ color: 'var(--muted)' }}>
+                You can also reach me directly by email or through my public profiles.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <InfoCard label="Primary Email" value={siteContent.email} href={`mailto:${siteContent.email}`} />
+              <InfoCard label="LinkedIn" value="vikram-saini-0b35ab207" href={siteContent.linkedin} />
+              <InfoCard label="GitHub" value="VikramS04" href={siteContent.github} />
+            </div>
+
+            <div
+              className="mt-6 rounded-[24px] px-4 py-4 font-mono text-[0.68rem] leading-6 uppercase tracking-[0.12em]"
+              style={{
+                background: 'rgba(148,163,184,0.05)',
+                border: '1px solid rgba(148,163,184,0.12)',
+                color: 'var(--muted)',
+              }}
             >
-              {siteContent.email}
-            </a>
+              EmailJS setup required:
+              <br />
+              `VITE_EMAILJS_SERVICE_ID`
+              <br />
+              `VITE_EMAILJS_TEMPLATE_ID`
+              <br />
+              `VITE_EMAILJS_PUBLIC_KEY`
+            </div>
           </div>
         </motion.div>
       </div>
     </section>
+  );
+}
+
+function Field({
+  label,
+  name,
+  type = 'text',
+  value,
+  onChange,
+  placeholder,
+  multiline = false,
+}) {
+  const sharedProps = {
+    name,
+    value,
+    onChange,
+    placeholder,
+    required: true,
+    className:
+      'w-full rounded-[22px] border px-4 py-4 text-sm outline-none transition-all duration-200 md:text-base',
+    style: {
+      background: 'rgba(148,163,184,0.05)',
+      borderColor: 'rgba(148,163,184,0.12)',
+      color: 'var(--text)',
+    },
+  };
+
+  return (
+    <label className="block text-left">
+      <span className="mb-2 block font-mono text-[0.68rem] uppercase tracking-[0.14em]" style={{ color: 'var(--muted)' }}>
+        {label}
+      </span>
+      {multiline ? (
+        <textarea {...sharedProps} rows={6} />
+      ) : (
+        <input {...sharedProps} type={type} />
+      )}
+    </label>
+  );
+}
+
+function InfoCard({ label, value, href }) {
+  return (
+    <a
+      href={href}
+      target={href.startsWith('mailto:') ? '_self' : '_blank'}
+      rel="noreferrer"
+      className="block rounded-[24px] px-4 py-4 no-underline transition-all duration-200"
+      style={{
+        background: 'rgba(148,163,184,0.05)',
+        border: '1px solid rgba(148,163,184,0.12)',
+      }}
+    >
+      <div className="mb-1 font-mono text-[0.62rem] uppercase tracking-[0.16em]" style={{ color: 'var(--accent2)' }}>
+        {label}
+      </div>
+      <div className="break-all text-sm md:text-base" style={{ color: 'var(--text)' }}>
+        {value}
+      </div>
+    </a>
   );
 }
 
