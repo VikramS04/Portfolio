@@ -3,24 +3,24 @@ import { motion } from 'framer-motion';
 import { siteContent } from '../content/siteContent';
 
 const roles = [
-  'B.Tech CSE Student @ JECRC University',
-  'AI/ML Learner Building Practical Projects',
-  'Frontend Intern Experience @ CodeAlpha',
-  'Tech Team Member @ NIRBHECK',
-  'Marketing Lead @ IAESTE JECRC',
+  '3rd Year B.Tech CSE (AI/ML) @ JECRC University',
+  'Head of IT & Data Analytics @ IAESTE India LC JECRC',
+  'Data Analysis Intern @ Samatrix Consulting',
+  'Full-Stack Web Development Intern @ IAESTE Burundi',
+  'Hackathon Builder Working on Practical Products',
 ];
 
 const profileHighlights = [
+  'Full Stack',
   'AI/ML',
-  'Frontend',
-  'Problem Solving',
+  'Data Analysis',
   'Open to opportunities',
 ];
 
 const quickStats = [
-  { value: '2nd Year', label: 'B.Tech CSE' },
-  { value: 'Jaipur', label: 'Based in India' },
-  { value: 'React + ML', label: 'Current focus' },
+  { value: '3rd Year', label: 'B.Tech CSE (AI/ML)' },
+  { value: '8.02 CGPA', label: 'Academic record' },
+  { value: '2027', label: 'Expected graduation' },
 ];
 
 const socialLinks = [
@@ -123,9 +123,9 @@ export default function Hero() {
             className="mb-8 max-w-2xl text-lg leading-8 md:text-xl"
             style={{ color: 'var(--muted)' }}
           >
-            I build polished web experiences while learning how to ship practical AI/ML work.
-            Right now, I am focused on becoming a strong full-stack engineer with a sharp eye for
-            design, usability, and real-world execution.
+            I am a full-stack web developer and AI/ML student focused on building responsive products,
+            backend systems, and data-driven solutions. My work spans web development, data analysis,
+            hackathon builds, and technical leadership through IAESTE India LC JECRC.
           </motion.p>
 
           <motion.div

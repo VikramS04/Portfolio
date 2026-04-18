@@ -3,17 +3,17 @@ import { motion } from 'framer-motion';
 import SectionHeader from './SectionHeader';
 
 const stats = [
-  { num: '5+', label: 'Projects explored' },
-  { num: '2', label: 'Core domains' },
-  { num: '2nd', label: 'Year B.Tech' },
-  { num: '24/7', label: 'Learning mode' },
+  { num: '8.02', label: 'Current CGPA' },
+  { num: '3rd', label: 'Year B.Tech' },
+  { num: '2027', label: 'Graduation target' },
+  { num: '5+', label: 'Projects & case builds' },
 ];
 
 const infoRows = [
   { key: '// location', val: 'Jaipur, Rajasthan, India' },
-  { key: '// focus', val: 'AI/ML · Frontend · Product-oriented builds' },
-  { key: '// profiles', val: 'LinkedIn + GitHub updated in this portfolio' },
-  { key: '// seeking', val: 'Internships · collaborative work · growth-focused teams' },
+  { key: '// focus', val: 'Full-stack web development · AI/ML · data analysis' },
+  { key: '// leadership', val: 'Head of IT & Data Analytics, IAESTE India LC JECRC' },
+  { key: '// seeking', val: 'Internships · global exposure · growth-focused teams' },
 ];
 
 function Reveal({ children, delay = 0, direction = 'up' }) {
@@ -50,11 +50,12 @@ export default function About() {
                 </div>
                 <div><Kw>const</Kw> <Pr>vikram</Pr> = {'{'}</div>
                 <div>&nbsp;&nbsp;<Pr>name</Pr>: <Str>"Vikram Saini"</Str>,</div>
-                <div>&nbsp;&nbsp;<Pr>education</Pr>: <Str>"B.Tech CSE, JECRC University"</Str>,</div>
-                <div>&nbsp;&nbsp;<Pr>track</Pr>: <Str>"AI/ML + Frontend Development"</Str>,</div>
-                <div>&nbsp;&nbsp;<Pr>currentFocus</Pr>: [<Str>"React"</Str>, <Str>"Tailwind"</Str>, <Str>"ML Foundations"</Str>],</div>
+                <div>&nbsp;&nbsp;<Pr>education</Pr>: <Str>"B.Tech CSE (AI/ML), JECRC University"</Str>,</div>
+                <div>&nbsp;&nbsp;<Pr>year</Pr>: <Str>"3rd Year"</Str>,</div>
+                <div>&nbsp;&nbsp;<Pr>cgpa</Pr>: <Num>8.02</Num>,</div>
+                <div>&nbsp;&nbsp;<Pr>currentFocus</Pr>: [<Str>"React"</Str>, <Str>"Node.js"</Str>, <Str>"Data Analysis"</Str>],</div>
                 <div>&nbsp;&nbsp;<Pr>email</Pr>: <Str>"vikramsaini7723@gmail.com"</Str>,</div>
-                <div>&nbsp;&nbsp;<Pr>mindset</Pr>: <Str>"Learn fast, ship clean, improve continuously"</Str>,</div>
+                <div>&nbsp;&nbsp;<Pr>leadership</Pr>: <Str>"Head of IT & Data Analytics @ IAESTE LC JECRC"</Str>,</div>
                 <div>&nbsp;&nbsp;<Pr>status</Pr>: <Str>"Open to opportunities"</Str></div>
                 <div>{'}'};</div>
               </div>
@@ -79,18 +80,17 @@ export default function About() {
           <Reveal direction="left">
             <div className="glass-panel rounded-[32px] p-7 md:p-8">
               <p className="mb-5 text-base leading-8 md:text-lg" style={{ color: 'var(--muted)' }}>
-                I am a <strong style={{ color: 'var(--text)' }}>2nd-year Computer Science student</strong> at
-                {' '}JECRC University, Jaipur, currently growing at the intersection of{' '}
-                <strong style={{ color: 'var(--accent)' }}>AI/ML</strong> and{' '}
-                <strong style={{ color: 'var(--accent2)' }}>modern frontend development</strong>.
+                I am a <strong style={{ color: 'var(--text)' }}>3rd-year Computer Science student</strong> at
+                {' '}JECRC University, Jaipur, specializing in <strong style={{ color: 'var(--accent)' }}>AI/ML under the Samatrix track</strong> while actively building strength in{' '}
+                <strong style={{ color: 'var(--accent2)' }}>full-stack web development</strong>.
               </p>
               <p className="mb-5 text-base leading-8 md:text-lg" style={{ color: 'var(--muted)' }}>
-                My work so far reflects curiosity and range: building interfaces, contributing in team settings,
-                and taking on practical roles that sharpen both technical and communication skills.
+                My recent work reflects both technical depth and range: a <strong style={{ color: 'var(--text)' }}>Data Analysis Internship at Samatrix Consulting Pvt. Ltd.</strong>,
+                a <strong style={{ color: 'var(--text)' }}>Full-Stack Web Development Internship with IAESTE Burundi</strong>, and ongoing leadership in technical operations at IAESTE India LC JECRC.
               </p>
               <p className="text-base leading-8 md:text-lg" style={{ color: 'var(--muted)' }}>
-                This portfolio now leans into a cleaner, stronger presentation style because the goal is not only
-                to show projects, but to show that I care about the craft behind how they are presented.
+                I enjoy working across product UI, APIs, databases, and problem-solving environments like hackathons.
+                That mix of execution, learning speed, and ownership is what I want this portfolio to communicate.
               </p>
 
               <div className="mt-8 flex flex-col gap-3">

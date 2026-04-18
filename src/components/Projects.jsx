@@ -5,48 +5,48 @@ import SectionHeader from './SectionHeader';
 const projects = [
   {
     num: '01',
-    name: 'Safelancer',
-    desc: 'A sustainable shopping web app that surfaces eco-friendly product alternatives and scores items by their environmental impact. Built with a focus on real-world UX and social good.',
-    stack: ['React', 'CSS3', 'JavaScript', 'API Integration'],
-    live: null,
+    name: 'Krishi AI',
+    desc: 'A full-stack agriculture support platform built during a hackathon to help farmers with data-backed decisions. It combines a React frontend, Express backend, MySQL data workflows, and AI/ML-assisted crop guidance and agricultural insights.',
+    stack: ['React.js', 'Express.js', 'MySQL', 'REST APIs', 'Machine Learning'],
+    live: 'https://krishi-ai-ecru.vercel.app/',
     github: null,
-    badge: 'CONCEPT',
+    badge: 'HACKATHON',
   },
   {
     num: '02',
-    name: 'Praatika',
-    desc: 'Responsive e-commerce platform promoting Indian artisan crafts with a detailed navbar, multi-section layout, and smooth UX. A celebration of heritage meets modern web.',
-    stack: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
+    name: 'Track-it',
+    desc: 'A backend-focused financial record management system centered on secure transactions, authentication, and structured relational data design. Built to handle transaction creation, updates, and reliable data retrieval with ACID-compliant operations.',
+    stack: ['Node.js', 'MySQL', 'REST APIs', 'Authentication', 'RBAC'],
     live: null,
     github: null,
-    badge: 'SHOWCASE',
+    badge: 'BACKEND',
   },
   {
     num: '03',
-    name: 'Amazon Clone',
-    desc: 'Pixel-perfect front-end replica of Amazon\'s shopping interface — complete with product cards, cart logic, nav, and responsive design for all screen sizes.',
-    stack: ['HTML5', 'CSS3', 'JavaScript'],
+    name: 'ManuSight',
+    desc: 'A simulated FMCG production monitoring system designed to track machine-level output, downtime events, and fault thresholds. The architecture was planned to adapt to IoT-style ingestion and automated performance reporting.',
+    stack: ['System Design', 'Reporting', 'Industrial Monitoring', 'Data Workflows'],
     live: null,
     github: null,
-    badge: null,
+    badge: 'SYSTEM DESIGN',
   },
   {
     num: '04',
-    name: 'Chrome Link Saver',
-    desc: 'A lightweight Chrome extension for saving, organizing, and quickly accessing links across browsing sessions. Minimal UI, maximum productivity.',
-    stack: ['JavaScript', 'Chrome API', 'HTML/CSS'],
+    name: 'Safelance',
+    desc: 'A freelancer client payment app listed in your resume project work. It reflects your interest in practical web products that solve trust, workflow, and payment-related problems through web interfaces.',
+    stack: ['Full Stack', 'Product UI', 'Payments', 'Web App'],
     live: null,
     github: null,
     badge: null,
   },
   {
     num: '05',
-    name: 'Blackjack Game',
-    desc: 'Interactive browser-based Blackjack with full game logic, animated card dealing, score tracking, and responsive layout. Clean UI meets classic casino vibes.',
-    stack: ['JavaScript', 'HTML5', 'CSS Animations'],
+    name: 'Data Analysis Internship Projects',
+    desc: 'A set of applied internship projects covering stock risk modeling (VaR), IPL data analysis, A/B testing simulation, hypothesis testing, and survival analysis using Kaplan-Meier and Cox regression.',
+    stack: ['Python', 'Statistics', 'A/B Testing', 'Survival Analysis', 'Data Analysis'],
     live: null,
     github: null,
-    badge: null,
+    badge: 'INTERNSHIP',
   },
 ];
 
@@ -58,8 +58,8 @@ export default function Projects() {
 
         <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <p className="max-w-2xl text-base leading-8 md:text-lg" style={{ color: 'var(--muted)' }}>
-            I kept the project section honest: rather than fake links, this version focuses on the ideas,
-            execution, and directions I have been exploring. More code is available directly on GitHub.
+            This section now reflects the stronger project information from your resume and IAESTE factsheets:
+            hackathon work, backend systems, manufacturing monitoring concepts, and analytical internship projects.
           </p>
           <a
             href="https://github.com/VikramS04"

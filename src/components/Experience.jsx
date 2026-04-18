@@ -4,49 +4,42 @@ import SectionHeader from './SectionHeader';
 
 const work = [
   {
-    date: '2024 — PRESENT',
-    role: 'Tech Team Member',
-    company: 'NIRBHECK — Cybersecurity Startup',
-    desc: 'Working on the core tech team building cybersecurity tools and vulnerability analysis systems. Contributing to product development and threat detection features.',
-    tags: ['Python', 'Security', 'Analysis'],
+    date: 'SEP 2025 — PRESENT',
+    role: 'Head, Information Technology and Data Analytics',
+    company: 'IAESTE India LC JECRC',
+    desc: 'Leading the Information Technology and Data Analytics department, overseeing the organization’s website, maintenance portal, database workflows, and broader digital infrastructure while coordinating technical initiatives across the team.',
+    tags: ['Leadership', 'Web Ops', 'Database', 'Technical Management'],
   },
   {
-    date: '2024 — PRESENT',
-    role: 'Marketing — Local Committee Member',
-    company: 'IAESTE JECRC',
-    desc: 'Managing marketing operations for international technical exchange programs. Coordinating outreach, event promotion, and student engagement for IAESTE\'s JECRC chapter.',
-    tags: ['Marketing', 'Events', 'International'],
+    date: 'JUN 2025 — JUL 2025',
+    role: 'Data Analysis Intern',
+    company: 'Samatrix Consulting Pvt. Ltd. | Remote',
+    desc: 'Worked on projects spanning finance, healthcare, e-commerce, and sports, including stock risk modeling, A/B testing, queue optimization, IPL data analysis, and survival analysis using Python-based analytical workflows.',
+    tags: ['Python', 'Data Analysis', 'Statistics', 'Simulation'],
   },
   {
-    date: '2024',
-    role: 'Frontend Development Intern',
-    company: 'CodeAlpha',
-    desc: 'Built responsive frontend interfaces and React components as part of the internship program. Focused on clean UI implementation and modern web standards.',
-    tags: ['React', 'HTML/CSS', 'JavaScript'],
-  },
-  {
-    date: '2024 — PRESENT',
-    role: 'Co-Founder',
-    company: 'Seed Protein Startup',
-    desc: 'Developing a B2C protein powder brand sourced from chia, flax, and sesame seeds — combining nutrition science with product entrepreneurship.',
-    tags: ['Entrepreneurship', 'Product Dev'],
+    date: 'JUN 2025 — JUL 2025',
+    role: 'Full-Stack Web Development Intern',
+    company: 'IAESTE Burundi | Remote',
+    desc: 'Selected for a global internship to build full-stack web applications using React.js, Node.js, APIs, and databases. Also developed the official website for IAESTE Burundi while gaining international collaborative software development experience.',
+    tags: ['React.js', 'Node.js', 'APIs', 'Global Internship'],
   },
 ];
 
 const education = [
   {
     date: '2023 — 2027',
-    role: 'B.Tech — Computer Science',
+    role: 'B.Tech — Computer Science (AI/ML - Samatrix)',
     company: 'JECRC University, Jaipur',
-    desc: 'Specializing in AI/ML through the Samatrix program. Currently in 2nd year with a focus on machine learning, data structures, and full-stack development.',
-    tags: ['AI/ML', 'Samatrix', 'B.Tech CS'],
+    desc: 'Currently in 3rd year with an 8.02 CGPA, specializing in Artificial Intelligence and Machine Learning while continuing to build strength in full-stack development, data analysis, and practical product engineering.',
+    tags: ['3rd Year', '8.02 CGPA', 'AI/ML', 'Full Stack'],
   },
   {
-    date: 'IN PROGRESS',
-    role: 'Internship Application',
-    company: 'CASCINATION AG — Switzerland (via IAESTE)',
-    desc: "Pursuing an international technical internship at CASCINATION AG in Switzerland through IAESTE's global exchange program for engineering and science students.",
-    tags: ['Switzerland', 'IAESTE', 'International'],
+    date: '2020 — 2022',
+    role: 'Senior Secondary Education',
+    company: 'Asian Public School, Sohna, Haryana',
+    desc: 'Completed secondary education before starting the B.Tech journey. This foundation led into your current technical track in Computer Science with AI/ML specialization.',
+    tags: ['Schooling', 'Haryana', 'Academic Foundation'],
   },
 ];
 

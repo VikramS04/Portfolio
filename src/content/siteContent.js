@@ -1,19 +1,19 @@
 export const siteContent = {
   name: 'Vikram Saini',
   shortName: 'Vikram',
-  role: 'Frontend Developer and AI/ML Learner',
-  headline: 'Frontend Developer and AI/ML Learner building polished digital experiences',
+  role: 'Full-Stack Web Developer and AI/ML Student',
+  headline: 'Full-stack web developer and AI/ML student building polished digital experiences',
   location: 'Jaipur, Rajasthan, India',
   email: 'vikramsaini7723@gmail.com',
   github: 'https://github.com/VikramS04',
   linkedin: 'https://www.linkedin.com/in/vikram-saini-0b35ab207/',
   avatar: 'https://github.com/VikramS04.png',
   bio:
-    'Portfolio of Vikram Saini, a B.Tech CSE student at JECRC University focused on frontend development, polished UI work, and practical AI/ML learning.',
+    'Portfolio of Vikram Saini, a 3rd-year B.Tech Computer Science student at JECRC University specializing in AI/ML, full-stack web development, data analysis, and product-focused digital experiences.',
   keywords: [
     'Vikram Saini',
     'Vikram Saini portfolio',
-    'Frontend Developer portfolio',
+    'Full Stack Web Developer portfolio',
     'React portfolio',
     'Vite portfolio',
     'Tailwind portfolio',
@@ -25,37 +25,37 @@ export const siteContent = {
 
 export const sectionSeo = {
   home: {
-    title: 'Vikram Saini | Frontend Developer and AI/ML Learner',
+    title: 'Vikram Saini | Full-Stack Web Developer and AI/ML Student',
     description:
-      'Portfolio of Vikram Saini featuring frontend projects, polished UI work, technical growth, and practical AI/ML learning.',
+      'Portfolio of Vikram Saini featuring full-stack projects, data analysis experience, AI/ML learning, and leadership in technical roles at IAESTE LC JECRC.',
     path: '',
     type: 'website',
   },
   about: {
     title: 'About Vikram Saini | Portfolio',
     description:
-      'Learn about Vikram Saini, a JECRC University student focused on frontend development, product-minded design, and AI/ML learning.',
+      'Learn about Vikram Saini, a 3rd-year JECRC University student focused on full-stack development, AI/ML, data analysis, and technical leadership.',
     path: '#about',
     type: 'profile',
   },
   skills: {
     title: 'Skills | Vikram Saini Portfolio',
     description:
-      'Explore Vikram Saini’s skills across React, Tailwind CSS, JavaScript, frontend development, AI/ML tooling, and practical product work.',
+      'Explore Vikram Saini’s skills across React, Node.js, Express.js, MySQL, MongoDB, Python, data analysis, AI/ML tooling, and full-stack development.',
     path: '#skills',
     type: 'website',
   },
   projects: {
     title: 'Projects | Vikram Saini Portfolio',
     description:
-      'Browse Vikram Saini’s featured projects in frontend development, UI work, and hands-on web application building.',
+      'Browse Vikram Saini’s featured projects including Krishi AI, Track-it, and ManuSight across full-stack engineering, backend systems, and data-driven applications.',
     path: '#projects',
     type: 'website',
   },
   experience: {
     title: 'Experience and Education | Vikram Saini Portfolio',
     description:
-      'See Vikram Saini’s journey through internships, team work, university education, and ongoing technical growth.',
+      'See Vikram Saini’s experience at Samatrix Consulting, IAESTE Burundi, and IAESTE India LC JECRC along with his AI/ML-focused B.Tech journey.',
     path: '#experience',
     type: 'website',
   },

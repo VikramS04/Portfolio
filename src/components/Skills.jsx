@@ -4,34 +4,34 @@ import SectionHeader from './SectionHeader';
 
 const categories = [
   {
-    title: '// AI & Machine Learning',
-    tags: ['Python', 'TensorFlow', 'PyTorch', 'Scikit-learn', 'NumPy', 'Pandas', 'OpenCV', 'NLP'],
-    hot: ['Python', 'TensorFlow', 'PyTorch'],
+    title: '// AI, ML & Data Analysis',
+    tags: ['Python', 'R', 'Data Analysis', 'Machine Learning', 'Statistical Modeling', 'NLP', 'Pandas', 'NumPy'],
+    hot: ['Python', 'Machine Learning', 'Data Analysis'],
   },
   {
     title: '// Frontend Development',
-    tags: ['React.js', 'HTML5', 'CSS3', 'JavaScript', 'Tailwind CSS', 'GSAP', 'Framer Motion'],
-    hot: ['React.js'],
+    tags: ['React.js', 'HTML5', 'CSS3', 'Tailwind CSS', 'Bootstrap', 'JavaScript', 'Responsive Design'],
+    hot: ['React.js', 'Tailwind CSS'],
   },
   {
-    title: '// Data & Big Data',
-    tags: ['Data Analysis', 'Matplotlib', 'Seaborn', 'SQL', 'Jupyter', 'Apache Spark'],
-    hot: ['Data Analysis'],
+    title: '// Backend & APIs',
+    tags: ['Node.js', 'Express.js', 'REST APIs', 'JWT Auth', 'RBAC', 'Server-side Logic', 'MVC Architecture'],
+    hot: ['Node.js', 'Express.js'],
+  },
+  {
+    title: '// Databases & Systems',
+    tags: ['MySQL', 'PostgreSQL', 'MongoDB', 'Database Design', 'Transactions', 'Performance Optimization'],
+    hot: ['MySQL', 'PostgreSQL', 'MongoDB'],
   },
   {
     title: '// Tools & Platforms',
-    tags: ['Git / GitHub', 'VS Code', 'Linux', 'Node.js', 'Figma', 'Vercel', 'Docker'],
-    hot: ['Git / GitHub'],
+    tags: ['Git', 'GitHub', 'Postman', 'VS Code', 'Linux', 'Cloud Deployment'],
+    hot: ['Git', 'GitHub'],
   },
   {
-    title: '// Cybersecurity (NIRBHECK)',
-    tags: ['Network Security', 'Vulnerability Analysis', 'Ethical Hacking', 'Python Scripts'],
-    hot: [],
-  },
-  {
-    title: '// Soft Skills',
-    tags: ['Marketing', 'Team Leadership', 'Entrepreneurship', 'Technical Writing', 'Event Management'],
-    hot: [],
+    title: '// Leadership & Collaboration',
+    tags: ['Leadership', 'Communication', 'Teamwork', 'Problem Solving', 'Quick Thinking', 'Creative Writing'],
+    hot: ['Leadership'],
   },
 ];
 
