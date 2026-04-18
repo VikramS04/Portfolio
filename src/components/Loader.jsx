@@ -83,7 +83,7 @@ export default function Loader({ onDone }) {
               marginBottom: '3rem', letterSpacing: '0.08em',
             }}
           >
-            VS.dev
+            vikramSaini.xyz
           </motion.div>
 
           {/* Terminal lines */}

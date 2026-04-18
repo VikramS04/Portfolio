@@ -262,13 +262,7 @@ export default function Contact() {
                 color: 'var(--muted)',
               }}
             >
-              EmailJS setup required:
-              <br />
-              `VITE_EMAILJS_SERVICE_ID`
-              <br />
-              `VITE_EMAILJS_TEMPLATE_ID`
-              <br />
-              `VITE_EMAILJS_PUBLIC_KEY`
+             
             </div>
           </div>
         </motion.div>
