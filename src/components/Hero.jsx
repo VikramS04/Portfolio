@@ -1,0 +1,316 @@
+import React, { useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
+import { siteContent } from '../content/siteContent';
+
+const roles = [
+  'B.Tech CSE Student @ JECRC University',
+  'AI/ML Learner Building Practical Projects',
+  'Frontend Intern Experience @ CodeAlpha',
+  'Tech Team Member @ NIRBHECK',
+  'Marketing Lead @ IAESTE JECRC',
+];
+
+const profileHighlights = [
+  'AI/ML',
+  'Frontend',
+  'Problem Solving',
+  'Open to opportunities',
+];
+
+const quickStats = [
+  { value: '2nd Year', label: 'B.Tech CSE' },
+  { value: 'Jaipur', label: 'Based in India' },
+  { value: 'React + ML', label: 'Current focus' },
+];
+
+const socialLinks = [
+  { label: 'LinkedIn', href: siteContent.linkedin },
+  { label: 'GitHub', href: siteContent.github },
+  { label: 'Email', href: `mailto:${siteContent.email}` },
+];
+
+export default function Hero() {
+  const tagRef = useRef(null);
+  const tiRef = useRef(0);
+  const ciRef = useRef(0);
+  const delRef = useRef(false);
+  const timerRef = useRef(null);
+
+  // Typewriter
+  useEffect(() => {
+    function tick() {
+      const el = tagRef.current;
+      if (!el) return;
+      const txt = roles[tiRef.current];
+      if (!delRef.current && ciRef.current <= txt.length) {
+        el.textContent = txt.slice(0, ciRef.current++);
+        const delay = ciRef.current === txt.length ? 1800 : 55;
+        timerRef.current = setTimeout(tick, delay);
+      } else if (!delRef.current) {
+        delRef.current = true;
+        timerRef.current = setTimeout(tick, 600);
+      } else if (ciRef.current > 0) {
+        el.textContent = txt.slice(0, --ciRef.current);
+        timerRef.current = setTimeout(tick, 28);
+      } else {
+        delRef.current = false;
+        tiRef.current = (tiRef.current + 1) % roles.length;
+        timerRef.current = setTimeout(tick, 300);
+      }
+    }
+    timerRef.current = setTimeout(tick, 1400);
+    return () => clearTimeout(timerRef.current);
+  }, []);
+
+  return (
+    <section
+      id="hero"
+      className="section-shell relative overflow-hidden px-6 pb-16 pt-32 md:px-12 md:pb-20"
+      style={{ minHeight: '100vh' }}
+    >
+      <div
+        className="pointer-events-none absolute left-[-8rem] top-20 h-72 w-72 rounded-full blur-3xl"
+        style={{ background: 'rgba(245,158,11,0.18)' }}
+      />
+      <div
+        className="pointer-events-none absolute bottom-10 right-[-5rem] h-80 w-80 rounded-full blur-3xl"
+        style={{ background: 'rgba(56,189,248,0.16)' }}
+      />
+
+      <div className="relative z-[1] mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+        <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 font-mono text-[0.72rem] uppercase tracking-[0.18em]"
+            style={{
+              color: 'var(--text)',
+              border: '1px solid rgba(148,163,184,0.16)',
+              background: 'rgba(148,163,184,0.06)',
+            }}
+          >
+            <span style={{ color: 'var(--accent)' }}>&gt;</span>
+            <span ref={tagRef} />
+            <span style={{ animation: 'blink 1s step-end infinite' }}>_</span>
+            <style>{`@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}`}</style>
+          </motion.div>
+
+          <h1 className="mb-6 text-[clamp(3.5rem,9vw,7rem)] font-extrabold leading-[0.92] tracking-[-0.05em]">
+            <motion.span
+              initial={{ opacity: 0, x: -60 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              className="block"
+            >
+              Vikram
+            </motion.span>
+            <motion.span
+              initial={{ opacity: 0, x: 60 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
+              className="block"
+              style={{ color: 'var(--accent)' }}
+            >
+              Saini
+            </motion.span>
+          </h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.85 }}
+            className="mb-8 max-w-2xl text-lg leading-8 md:text-xl"
+            style={{ color: 'var(--muted)' }}
+          >
+            I build polished web experiences while learning how to ship practical AI/ML work.
+            Right now, I am focused on becoming a strong full-stack engineer with a sharp eye for
+            design, usability, and real-world execution.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.95 }}
+            className="mb-8 flex flex-wrap gap-3"
+          >
+            {profileHighlights.map((item) => (
+              <span
+                key={item}
+                className="chip px-4 py-2 font-mono text-[0.72rem] uppercase tracking-[0.12em]"
+                style={{ color: 'var(--text)' }}
+              >
+                {item}
+              </span>
+            ))}
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.05 }}
+            className="mb-10 flex flex-wrap gap-4"
+          >
+            <a href="#projects" style={btnPrimary}>
+              View Projects
+            </a>
+            <a
+              href={siteContent.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              style={btnOutline}
+            >
+              LinkedIn
+            </a>
+            <a
+              href={siteContent.github}
+              target="_blank"
+              rel="noreferrer"
+              style={btnGhost}
+            >
+              GitHub
+            </a>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.08 }}
+            className="mb-10 flex flex-wrap items-center gap-3"
+          >
+            {socialLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target={link.href.startsWith('mailto:') ? '_self' : '_blank'}
+                rel="noreferrer"
+                className="chip inline-flex items-center gap-2 px-4 py-2 font-mono text-[0.68rem] uppercase tracking-[0.14em] no-underline"
+                style={{ color: 'var(--text)' }}
+              >
+                {link.label}
+              </a>
+            ))}
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+            className="grid gap-4 sm:grid-cols-3"
+          >
+            {quickStats.map((item) => (
+              <div key={item.label} className="glass-panel rounded-[24px] p-5">
+                <div className="mb-2 font-mono text-xs uppercase tracking-[0.18em]" style={{ color: 'var(--accent2)' }}>
+                  {item.label}
+                </div>
+                <div className="text-lg font-semibold tracking-[-0.02em]">{item.value}</div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 40, scale: 0.98 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          className="glass-panel relative overflow-hidden rounded-[36px] p-5 md:p-7"
+        >
+          <div
+            className="absolute inset-x-6 top-0 h-px"
+            style={{ background: 'linear-gradient(90deg, transparent, rgba(245,158,11,0.8), rgba(56,189,248,0.8), transparent)' }}
+          />
+          <div className="mb-5 flex items-center justify-between">
+            <div>
+              <div className="font-mono text-[0.72rem] uppercase tracking-[0.18em]" style={{ color: 'var(--accent)' }}>
+                Profile Snapshot
+              </div>
+              <div className="mt-1 text-sm" style={{ color: 'var(--muted)' }}>
+                Pulled from GitHub public avatar
+              </div>
+            </div>
+            <div className="chip px-3 py-2 font-mono text-[0.68rem] uppercase tracking-[0.14em]" style={{ color: 'var(--accent3)' }}>
+              Available
+            </div>
+          </div>
+
+          <div className="relative overflow-hidden rounded-[28px]">
+            <img
+              src={siteContent.avatar}
+              alt={siteContent.name}
+              className="h-[420px] w-full object-cover md:h-[520px]"
+            />
+            <div
+              className="absolute inset-x-0 bottom-0 p-6"
+              style={{ background: 'linear-gradient(180deg, transparent, rgba(7,17,31,0.86) 55%, rgba(7,17,31,0.96) 100%)' }}
+            >
+              <div className="mb-2 font-mono text-[0.7rem] uppercase tracking-[0.18em]" style={{ color: 'var(--accent2)' }}>
+                {siteContent.name}
+              </div>
+              <div className="max-w-sm text-2xl font-semibold leading-tight tracking-[-0.03em]">
+                Building a portfolio that feels sharper, clearer, and more credible.
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+const btnPrimary = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: '0.5rem',
+  padding: '0.95rem 1.5rem',
+  background: 'linear-gradient(135deg, var(--accent), #f97316)',
+  color: '#08111b',
+  fontWeight: 800,
+  fontSize: '0.82rem',
+  letterSpacing: '0.1em',
+  textDecoration: 'none',
+  borderRadius: '999px',
+  border: 'none',
+  cursor: 'pointer',
+  fontFamily: 'var(--font-mono)',
+  textTransform: 'uppercase',
+  boxShadow: '0 12px 32px rgba(245,158,11,0.28)',
+};
+
+const btnOutline = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: '0.5rem',
+  padding: '0.95rem 1.5rem',
+  background: 'rgba(56,189,248,0.08)',
+  color: 'var(--text)',
+  fontWeight: 700,
+  fontSize: '0.82rem',
+  letterSpacing: '0.1em',
+  textDecoration: 'none',
+  borderRadius: '999px',
+  border: '1px solid rgba(56,189,248,0.22)',
+  cursor: 'pointer',
+  fontFamily: 'var(--font-mono)',
+  textTransform: 'uppercase',
+};
+
+const btnGhost = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: '0.5rem',
+  padding: '0.95rem 1.5rem',
+  background: 'rgba(148,163,184,0.06)',
+  color: 'var(--text)',
+  fontWeight: 700,
+  fontSize: '0.82rem',
+  letterSpacing: '0.1em',
+  textDecoration: 'none',
+  borderRadius: '999px',
+  border: '1px solid rgba(148,163,184,0.14)',
+  cursor: 'pointer',
+  fontFamily: 'var(--font-mono)',
+  textTransform: 'uppercase',
+};
