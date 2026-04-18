@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { FiMoon, FiSun } from 'react-icons/fi';
 import MobileMenu from './MobileMenu';
 
-const links = ['about', 'skills', 'projects', 'experience', 'contact'];
+const links = ['about', 'skills', 'projects', 'experience', 'certificates', 'contact'];
 
-export default function Navbar() {
+export default function Navbar({ theme, onToggleTheme }) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -20,10 +21,10 @@ export default function Navbar() {
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
       className="fixed inset-x-0 top-0 z-[100] flex items-center justify-between px-6 py-4 md:px-12"
       style={{
-        background: scrolled ? 'rgba(7,17,31,0.86)' : 'rgba(7,17,31,0.56)',
+        background: scrolled ? 'var(--nav-bg-strong)' : 'var(--nav-bg)',
         backdropFilter: 'blur(18px)',
-        borderBottom: '1px solid rgba(148, 163, 184, 0.12)',
-        boxShadow: scrolled ? '0 10px 40px rgba(2, 8, 23, 0.18)' : 'none',
+        borderBottom: '1px solid var(--border)',
+        boxShadow: scrolled ? 'var(--shadow-soft)' : 'none',
       }}
     >
       <a href="#hero" className="flex items-center gap-3 no-underline">
@@ -64,16 +65,22 @@ export default function Navbar() {
       </ul>
 
       <div className="desktop-nav-status hidden items-center gap-3 lg:flex">
-        <span
-          className="inline-block h-2 w-2 rounded-full"
-          style={{ background: 'var(--accent3)', animation: 'navPulse 2s infinite' }}
-        />
-        <span className="font-mono text-[0.7rem] uppercase tracking-[0.16em]" style={{ color: 'var(--muted)' }}>
-          Open to internships & collaborations
-        </span>
+        <button
+          type="button"
+          onClick={onToggleTheme}
+          className="inline-flex items-center gap-2 rounded-full px-4 py-3 font-mono text-[0.68rem] uppercase tracking-[0.14em]"
+          style={{
+            color: 'var(--text)',
+            background: 'rgba(148,163,184,0.06)',
+            border: '1px solid rgba(148,163,184,0.14)',
+          }}
+        >
+          {theme === 'dark' ? <FiSun size={14} /> : <FiMoon size={14} />}
+          {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+        </button>
       </div>
 
-      <MobileMenu />
+      <MobileMenu theme={theme} onToggleTheme={onToggleTheme} />
 
       <style>{`
         @keyframes navPulse{0%,100%{opacity:1}50%{opacity:0.3}}

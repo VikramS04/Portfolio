@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import SectionHeader from './SectionHeader';
 
 const stats = [
-  { num: '8.02', label: 'Current CGPA' },
   { num: '3rd', label: 'Year B.Tech' },
   { num: '2027', label: 'Graduation target' },
+  { num: '2025', label: 'Internship year' },
   { num: '5+', label: 'Projects & case builds' },
 ];
 
@@ -34,7 +34,7 @@ export default function About() {
     <section
       id="about"
       className="section-shell px-6 py-20 md:px-12"
-      style={{ background: 'rgba(11,23,40,0.58)' }}
+      style={{ background: 'var(--section-bg)' }}
     >
       <div className="mx-auto max-w-7xl">
         <SectionHeader label="About Me" title="Who I Am" />
@@ -52,7 +52,6 @@ export default function About() {
                 <div>&nbsp;&nbsp;<Pr>name</Pr>: <Str>"Vikram Saini"</Str>,</div>
                 <div>&nbsp;&nbsp;<Pr>education</Pr>: <Str>"B.Tech CSE (AI/ML), JECRC University"</Str>,</div>
                 <div>&nbsp;&nbsp;<Pr>year</Pr>: <Str>"3rd Year"</Str>,</div>
-                <div>&nbsp;&nbsp;<Pr>cgpa</Pr>: <Num>8.02</Num>,</div>
                 <div>&nbsp;&nbsp;<Pr>currentFocus</Pr>: [<Str>"React"</Str>, <Str>"Node.js"</Str>, <Str>"Data Analysis"</Str>],</div>
                 <div>&nbsp;&nbsp;<Pr>email</Pr>: <Str>"vikramsaini7723@gmail.com"</Str>,</div>
                 <div>&nbsp;&nbsp;<Pr>leadership</Pr>: <Str>"Head of IT & Data Analytics @ IAESTE LC JECRC"</Str>,</div>
@@ -124,4 +123,3 @@ export default function About() {
 const Kw = ({ children }) => <span style={{ color: '#7c3aed' }}>{children}</span>;
 const Pr = ({ children }) => <span style={{ color: '#00e5ff' }}>{children}</span>;
 const Str = ({ children }) => <span style={{ color: '#10b981' }}>{children}</span>;
-const Num = ({ children }) => <span style={{ color: '#f59e0b' }}>{children}</span>;

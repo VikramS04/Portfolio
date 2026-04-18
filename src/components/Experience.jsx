@@ -31,8 +31,8 @@ const education = [
     date: '2023 — 2027',
     role: 'B.Tech — Computer Science (AI/ML - Samatrix)',
     company: 'JECRC University, Jaipur',
-    desc: 'Currently in 3rd year with an 8.02 CGPA, specializing in Artificial Intelligence and Machine Learning while continuing to build strength in full-stack development, data analysis, and practical product engineering.',
-    tags: ['3rd Year', '8.02 CGPA', 'AI/ML', 'Full Stack'],
+    desc: 'Currently in 3rd year, specializing in Artificial Intelligence and Machine Learning while continuing to build strength in full-stack development, data analysis, and practical product engineering.',
+    tags: ['3rd Year', 'AI/ML', 'Full Stack', 'JECRC University'],
   },
   {
     date: '2020 — 2022',
@@ -40,6 +40,13 @@ const education = [
     company: 'Asian Public School, Sohna, Haryana',
     desc: 'Completed secondary education before starting the B.Tech journey. This foundation led into your current technical track in Computer Science with AI/ML specialization.',
     tags: ['Schooling', 'Haryana', 'Academic Foundation'],
+  },
+  {
+    date: '2018 — 2020',
+    role: '9th - 10th CBSE',
+    company: 'Raath International School',
+    desc: 'Completed foundational school education under the CBSE curriculum before moving into senior secondary studies and later into Computer Science.',
+    tags: ['CBSE', 'Raath International School', 'Schooling'],
   },
 ];
 

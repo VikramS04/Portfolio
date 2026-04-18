@@ -8,6 +8,8 @@ export const siteContent = {
   github: 'https://github.com/VikramS04',
   linkedin: 'https://www.linkedin.com/in/vikram-saini-0b35ab207/',
   avatar: 'https://github.com/VikramS04.png',
+  heroImage: '/vikram-avatar.avif',
+  resumeFile: '/vikram-resume.pdf',
   bio:
     'Portfolio of Vikram Saini, a 3rd-year B.Tech Computer Science student at JECRC University specializing in AI/ML, full-stack web development, data analysis, and product-focused digital experiences.',
   keywords: [
@@ -43,6 +45,13 @@ export const sectionSeo = {
     description:
       'Explore Vikram Saini’s skills across React, Node.js, Express.js, MySQL, MongoDB, Python, data analysis, AI/ML tooling, and full-stack development.',
     path: '#skills',
+    type: 'website',
+  },
+  certificates: {
+    title: 'Certificates and Resume | Vikram Saini Portfolio',
+    description:
+      'Review Vikram Saini’s certifications across React, full-stack development, AI, data analysis, and technical learning, along with a downloadable resume.',
+    path: '#certificates',
     type: 'website',
   },
   projects: {

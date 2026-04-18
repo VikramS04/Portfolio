@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { sectionSeo, siteContent } from '../content/siteContent';
 
-const sectionOrder = ['home', 'about', 'skills', 'projects', 'experience', 'contact'];
+const sectionOrder = ['home', 'about', 'skills', 'projects', 'experience', 'certificates', 'contact'];
 
 function getSectionKey(hash) {
   const key = hash.replace('#', '') || 'home';

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { siteContent } from '../content/siteContent';
 
@@ -10,16 +10,11 @@ const roles = [
   'Hackathon Builder Working on Practical Products',
 ];
 
-const profileHighlights = [
-  'Full Stack',
-  'AI/ML',
-  'Data Analysis',
-  'Open to opportunities',
-];
+const profileHighlights = ['Full Stack', 'AI/ML', 'Data Analysis', 'Leadership'];
 
 const quickStats = [
   { value: '3rd Year', label: 'B.Tech CSE (AI/ML)' },
-  { value: '8.02 CGPA', label: 'Academic record' },
+  { value: '2025', label: 'Internship year' },
   { value: '2027', label: 'Expected graduation' },
 ];
 
@@ -30,6 +25,7 @@ const socialLinks = [
 ];
 
 export default function Hero() {
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const tagRef = useRef(null);
   const tiRef = useRef(0);
   const ciRef = useRef(0);
@@ -62,6 +58,13 @@ export default function Hero() {
     return () => clearTimeout(timerRef.current);
   }, []);
 
+  function handleCardMove(event) {
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 10;
+    const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * -10;
+    setTilt({ x, y });
+  }
+
   return (
     <section
       id="hero"
@@ -77,7 +80,7 @@ export default function Hero() {
         style={{ background: 'rgba(56,189,248,0.16)' }}
       />
 
-      <div className="relative z-[1] mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+      <div className="relative z-[1] mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -96,23 +99,23 @@ export default function Hero() {
             <style>{`@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}`}</style>
           </motion.div>
 
-          <h1 className="mb-6 text-[clamp(3.5rem,9vw,7rem)] font-extrabold leading-[0.92] tracking-[-0.05em]">
+          <h1 className="mb-6 max-w-3xl text-[clamp(2.7rem,6vw,4.8rem)] font-bold leading-[1.02] tracking-[-0.05em]">
             <motion.span
-              initial={{ opacity: 0, x: -60 }}
+              initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="block"
+              transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              className="block font-mono text-sm uppercase tracking-[0.2em] md:text-base"
+              style={{ color: 'var(--accent2)' }}
             >
-              Vikram
+              Hi, I&apos;m
             </motion.span>
             <motion.span
-              initial={{ opacity: 0, x: 60 }}
+              initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
-              className="block"
-              style={{ color: 'var(--accent)' }}
+              transition={{ duration: 0.9, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-3 block"
             >
-              Saini
+              Vikram Saini
             </motion.span>
           </h1>
 
@@ -125,7 +128,7 @@ export default function Hero() {
           >
             I am a full-stack web developer and AI/ML student focused on building responsive products,
             backend systems, and data-driven solutions. My work spans web development, data analysis,
-            hackathon builds, and technical leadership through IAESTE India LC JECRC.
+            hackathon execution, and technical leadership through IAESTE India LC JECRC.
           </motion.p>
 
           <motion.div
@@ -155,10 +158,17 @@ export default function Hero() {
               View Projects
             </a>
             <a
+              href={siteContent.resumeFile}
+              download
+              style={btnOutline}
+            >
+              Download Resume
+            </a>
+            <a
               href={siteContent.linkedin}
               target="_blank"
               rel="noreferrer"
-              style={btnOutline}
+              style={btnGhost}
             >
               LinkedIn
             </a>
@@ -214,40 +224,32 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
           className="glass-panel relative overflow-hidden rounded-[36px] p-5 md:p-7"
+          onMouseMove={handleCardMove}
+          onMouseLeave={() => setTilt({ x: 0, y: 0 })}
+          style={{
+            transform: `perspective(1200px) rotateX(${tilt.y}deg) rotateY(${tilt.x}deg)`,
+            transformStyle: 'preserve-3d',
+          }}
         >
           <div
             className="absolute inset-x-6 top-0 h-px"
             style={{ background: 'linear-gradient(90deg, transparent, rgba(245,158,11,0.8), rgba(56,189,248,0.8), transparent)' }}
           />
-          <div className="mb-5 flex items-center justify-between">
-            <div>
-              <div className="font-mono text-[0.72rem] uppercase tracking-[0.18em]" style={{ color: 'var(--accent)' }}>
-                Profile Snapshot
-              </div>
-              <div className="mt-1 text-sm" style={{ color: 'var(--muted)' }}>
-                Pulled from GitHub public avatar
-              </div>
-            </div>
-            <div className="chip px-3 py-2 font-mono text-[0.68rem] uppercase tracking-[0.14em]" style={{ color: 'var(--accent3)' }}>
-              Available
-            </div>
-          </div>
-
           <div className="relative overflow-hidden rounded-[28px]">
             <img
-              src={siteContent.avatar}
+              src={siteContent.heroImage}
               alt={siteContent.name}
               className="h-[420px] w-full object-cover md:h-[520px]"
             />
             <div
               className="absolute inset-x-0 bottom-0 p-6"
-              style={{ background: 'linear-gradient(180deg, transparent, rgba(7,17,31,0.86) 55%, rgba(7,17,31,0.96) 100%)' }}
+              style={{ background: 'linear-gradient(180deg, transparent, var(--hero-overlay-top) 55%, var(--hero-overlay-bottom) 100%)' }}
             >
               <div className="mb-2 font-mono text-[0.7rem] uppercase tracking-[0.18em]" style={{ color: 'var(--accent2)' }}>
                 {siteContent.name}
               </div>
               <div className="max-w-sm text-2xl font-semibold leading-tight tracking-[-0.03em]">
-                Building a portfolio that feels sharper, clearer, and more credible.
+                Designing products with cleaner interfaces, clearer logic, and stronger execution.
               </div>
             </div>
           </div>

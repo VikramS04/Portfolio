@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FiMoon, FiSun } from 'react-icons/fi';
 
-const links = ['about', 'skills', 'projects', 'experience', 'contact'];
+const links = ['about', 'skills', 'projects', 'experience', 'certificates', 'contact'];
 
-export default function MobileMenu() {
+export default function MobileMenu({ theme, onToggleTheme }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -46,12 +47,25 @@ export default function MobileMenu() {
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="fixed left-4 right-4 top-20 z-[99] flex flex-col gap-1 rounded-[28px] p-5"
             style={{
-              background: 'rgba(7,17,31,0.95)',
+              background: 'var(--mobile-menu-bg)',
               backdropFilter: 'blur(20px)',
-              border: '1px solid rgba(148,163,184,0.14)',
-              boxShadow: '0 18px 60px rgba(2, 8, 23, 0.45)',
+              border: '1px solid var(--border)',
+              boxShadow: 'var(--shadow-strong)',
             }}
           >
+            <button
+              type="button"
+              onClick={onToggleTheme}
+              className="mb-3 flex items-center justify-center gap-2 rounded-2xl px-3 py-4 font-mono text-[0.8rem] uppercase tracking-[0.16em]"
+              style={{
+                color: 'var(--text)',
+                border: '1px solid rgba(148,163,184,0.08)',
+                background: 'rgba(148,163,184,0.04)',
+              }}
+            >
+              {theme === 'dark' ? <FiSun size={16} /> : <FiMoon size={16} />}
+              {theme === 'dark' ? 'Switch to Light' : 'Switch to Dark'}
+            </button>
             {links.map((link, i) => (
               <motion.a
                 key={link}

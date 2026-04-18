@@ -103,7 +103,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="section-shell px-6 py-20 text-center md:px-12" style={{ background: 'rgba(11,23,40,0.58)' }}>
+    <section id="contact" className="section-shell px-6 py-20 text-center md:px-12" style={{ background: 'var(--section-bg)' }}>
       <div className="mx-auto max-w-5xl">
         <div className="flex justify-center">
           <SectionHeader label="Contact" title="Let's Connect" />

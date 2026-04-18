@@ -52,7 +52,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="section-shell px-6 py-20 md:px-12" style={{ background: 'rgba(11,23,40,0.58)' }}>
+    <section id="projects" className="section-shell px-6 py-20 md:px-12" style={{ background: 'var(--section-bg)' }}>
       <div className="mx-auto max-w-7xl">
         <SectionHeader label="Featured Work" title="Projects" />
 
