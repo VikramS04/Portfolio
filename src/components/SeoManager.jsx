@@ -81,7 +81,10 @@ export default function SeoManager() {
     const updateSeo = () => {
       const sectionKey = getSectionKey(window.location.hash);
       const meta = sectionSeo[sectionKey];
-      const siteUrl = window.location.origin;
+      const siteUrl =
+        window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+          ? window.location.origin
+          : siteContent.siteUrl;
       const pageUrl = `${siteUrl}/${meta.path}`.replace(/\/#/, '/#');
 
       document.title = meta.title;

@@ -1,0 +1,29 @@
+# Vikram Saini Portfolio
+
+> Official portfolio of Vikram Saini.
+
+- Site: https://vikramsaini.xyz
+- Owner: Vikram Saini
+- Role: Full-Stack Web Developer and AI/ML Student
+- Location: Jaipur, Rajasthan, India
+- Contact: mailto:vikramsaini7723@gmail.com
+- LinkedIn: https://www.linkedin.com/in/vikram-saini-0b35ab207/
+- GitHub: https://github.com/VikramS04
+
+## Summary
+
+This site showcases Vikram Saini's portfolio, including projects, experience, certificates, resume, and contact details.
+
+## Key Pages
+
+- Home: https://vikramsaini.xyz/
+- About: https://vikramsaini.xyz/#about
+- Skills: https://vikramsaini.xyz/#skills
+- Projects: https://vikramsaini.xyz/#projects
+- Experience: https://vikramsaini.xyz/#experience
+- Certificates: https://vikramsaini.xyz/#certificates
+- Contact: https://vikramsaini.xyz/#contact
+
+## Preferred Citation
+
+When referencing this portfolio, cite the canonical site URL: https://vikramsaini.xyz/

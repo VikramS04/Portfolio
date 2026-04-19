@@ -18,10 +18,15 @@ const quickStats = [
   { value: '2027', label: 'Expected graduation' },
 ];
 
-const socialLinks = [
-  { label: 'LinkedIn', href: siteContent.linkedin },
-  { label: 'GitHub', href: siteContent.github },
-  { label: 'Email', href: `mailto:${siteContent.email}` },
+const featureCards = [
+  {
+    title: 'Product-focused',
+    text: 'Clean interfaces, scalable flows, and practical problem solving.',
+  },
+  {
+    title: 'Hands-on',
+    text: 'Internships, hackathons, full-stack builds, and technical leadership.',
+  },
 ];
 
 export default function Hero() {
@@ -32,7 +37,6 @@ export default function Hero() {
   const delRef = useRef(false);
   const timerRef = useRef(null);
 
-  // Typewriter
   useEffect(() => {
     function tick() {
       const el = tagRef.current;
@@ -54,11 +58,13 @@ export default function Hero() {
         timerRef.current = setTimeout(tick, 300);
       }
     }
+
     timerRef.current = setTimeout(tick, 1400);
     return () => clearTimeout(timerRef.current);
   }, []);
 
   function handleCardMove(event) {
+    if (window.innerWidth < 1024) return;
     const bounds = event.currentTarget.getBoundingClientRect();
     const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 10;
     const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * -10;
@@ -68,7 +74,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="section-shell relative overflow-hidden px-6 pb-16 pt-32 md:px-12 md:pb-20"
+      className="section-shell relative overflow-hidden px-6 pb-16 pt-28 md:px-12 md:pb-20 md:pt-32"
       style={{ minHeight: '100vh' }}
     >
       <div
@@ -76,17 +82,95 @@ export default function Hero() {
         style={{ background: 'rgba(245,158,11,0.18)' }}
       />
       <div
-        className="pointer-events-none absolute bottom-10 right-[-5rem] h-80 w-80 rounded-full blur-3xl"
+        className="pointer-events-none absolute right-[-5rem] top-32 h-80 w-80 rounded-full blur-3xl"
         style={{ background: 'rgba(56,189,248,0.16)' }}
       />
 
-      <div className="relative z-[1] mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
-        <div>
+      <div className="relative z-[1] mx-auto grid max-w-7xl items-start gap-8 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-12">
+        <motion.div
+          initial={{ opacity: 0, y: 40, scale: 0.98 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.9, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+          className="order-1 lg:order-2"
+        >
+          <motion.div
+            className="glass-panel relative overflow-hidden rounded-[32px] p-4 md:rounded-[38px] md:p-5"
+            onMouseMove={handleCardMove}
+            onMouseLeave={() => setTilt({ x: 0, y: 0 })}
+            style={{
+              transform: `perspective(1200px) rotateX(${tilt.y}deg) rotateY(${tilt.x}deg)`,
+              transformStyle: 'preserve-3d',
+            }}
+          >
+            <div
+              className="absolute inset-x-6 top-0 h-px"
+              style={{
+                background:
+                  'linear-gradient(90deg, transparent, rgba(245,158,11,0.8), rgba(56,189,248,0.8), transparent)',
+              }}
+            />
+
+            <div className="relative overflow-hidden rounded-[24px] md:rounded-[30px]">
+              <img
+                src={siteContent.heroImage}
+                alt={siteContent.name}
+                className="hero-avatar h-[320px] w-full object-cover object-top sm:h-[420px] md:h-[560px]"
+              />
+              <div
+                className="absolute inset-x-0 bottom-0 p-5 md:p-6"
+                style={{
+                  background:
+                    'linear-gradient(180deg, transparent, var(--hero-overlay-top) 55%, var(--hero-overlay-bottom) 100%)',
+                }}
+              >
+                <div
+                  className="mb-2 font-mono text-[0.68rem] uppercase tracking-[0.18em]"
+                  style={{ color: 'var(--accent2)' }}
+                >
+                  Full-Stack Web Developer
+                </div>
+                <div className="max-w-sm text-xl font-semibold leading-tight tracking-[-0.03em] md:text-2xl">
+                  Building products with cleaner interfaces, clearer logic, and stronger execution.
+                </div>
+              </div>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.85 }}
+              className="mt-4 grid gap-3 sm:grid-cols-2"
+            >
+              {featureCards.map((item) => (
+                <div
+                  key={item.title}
+                  className="rounded-[22px] px-4 py-4"
+                  style={{
+                    background: 'rgba(148,163,184,0.05)',
+                    border: '1px solid rgba(148,163,184,0.12)',
+                  }}
+                >
+                  <div
+                    className="mb-1 font-mono text-[0.66rem] uppercase tracking-[0.18em]"
+                    style={{ color: 'var(--accent)' }}
+                  >
+                    {item.title}
+                  </div>
+                  <div className="text-sm leading-6" style={{ color: 'var(--muted)' }}>
+                    {item.text}
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </motion.div>
+        </motion.div>
+
+        <div className="order-2 lg:order-1">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 font-mono text-[0.72rem] uppercase tracking-[0.18em]"
+            className="mb-5 inline-flex items-center gap-2 rounded-full px-4 py-2 font-mono text-[0.72rem] uppercase tracking-[0.18em]"
             style={{
               color: 'var(--text)',
               border: '1px solid rgba(148,163,184,0.16)',
@@ -99,7 +183,7 @@ export default function Hero() {
             <style>{`@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}`}</style>
           </motion.div>
 
-          <h1 className="mb-6 max-w-3xl text-[clamp(2.7rem,6vw,4.8rem)] font-bold leading-[1.02] tracking-[-0.05em]">
+          <h1 className="mb-5 max-w-3xl text-[clamp(2.8rem,6vw,5.2rem)] font-bold leading-[0.98] tracking-[-0.05em]">
             <motion.span
               initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
@@ -119,23 +203,33 @@ export default function Hero() {
             </motion.span>
           </h1>
 
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.62 }}
+            className="mb-5 max-w-2xl font-mono text-[0.76rem] uppercase tracking-[0.18em]"
+            style={{ color: 'var(--muted)' }}
+          >
+            Full-Stack Web Developer · AI/ML Student · Jaipur, India
+          </motion.div>
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.85 }}
-            className="mb-8 max-w-2xl text-lg leading-8 md:text-xl"
+            className="mb-7 max-w-2xl text-base leading-8 md:text-xl"
             style={{ color: 'var(--muted)' }}
           >
-            I am a full-stack web developer and AI/ML student focused on building responsive products,
-            backend systems, and data-driven solutions. My work spans web development, data analysis,
-            hackathon execution, and technical leadership through IAESTE India LC JECRC.
+            I build responsive products, backend systems, and data-driven solutions with a strong
+            focus on clarity, usability, and real-world execution. My work spans web development,
+            data analysis, hackathons, and technical leadership through IAESTE India LC JECRC.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.95 }}
-            className="mb-8 flex flex-wrap gap-3"
+            className="mb-7 flex flex-wrap gap-3"
           >
             {profileHighlights.map((item) => (
               <span
@@ -152,32 +246,18 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.05 }}
-            className="mb-10 flex flex-wrap gap-4"
+            className="mb-8 flex flex-wrap gap-4"
           >
             <a href="#projects" style={btnPrimary}>
               View Projects
             </a>
-            <a
-              href={siteContent.resumeFile}
-              download
-              style={btnOutline}
-            >
+            <a href={siteContent.resumeFile} download style={btnOutline}>
               Download Resume
             </a>
-            <a
-              href={siteContent.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              style={btnGhost}
-            >
+            <a href={siteContent.linkedin} target="_blank" rel="noreferrer" style={btnGhost}>
               LinkedIn
             </a>
-            <a
-              href={siteContent.github}
-              target="_blank"
-              rel="noreferrer"
-              style={btnGhost}
-            >
+            <a href={siteContent.github} target="_blank" rel="noreferrer" style={btnGhost}>
               GitHub
             </a>
           </motion.div>
@@ -185,32 +265,15 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.08 }}
-            className="mb-10 flex flex-wrap items-center gap-3"
-          >
-            {socialLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target={link.href.startsWith('mailto:') ? '_self' : '_blank'}
-                rel="noreferrer"
-                className="chip inline-flex items-center gap-2 px-4 py-2 font-mono text-[0.68rem] uppercase tracking-[0.14em] no-underline"
-                style={{ color: 'var(--text)' }}
-              >
-                {link.label}
-              </a>
-            ))}
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
+            transition={{ duration: 0.8, delay: 1.12 }}
             className="grid gap-4 sm:grid-cols-3"
           >
             {quickStats.map((item) => (
               <div key={item.label} className="glass-panel rounded-[24px] p-5">
-                <div className="mb-2 font-mono text-xs uppercase tracking-[0.18em]" style={{ color: 'var(--accent2)' }}>
+                <div
+                  className="mb-2 font-mono text-xs uppercase tracking-[0.18em]"
+                  style={{ color: 'var(--accent2)' }}
+                >
                   {item.label}
                 </div>
                 <div className="text-lg font-semibold tracking-[-0.02em]">{item.value}</div>
@@ -218,42 +281,6 @@ export default function Hero() {
             ))}
           </motion.div>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 40, scale: 0.98 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="glass-panel relative overflow-hidden rounded-[36px] p-5 md:p-7"
-          onMouseMove={handleCardMove}
-          onMouseLeave={() => setTilt({ x: 0, y: 0 })}
-          style={{
-            transform: `perspective(1200px) rotateX(${tilt.y}deg) rotateY(${tilt.x}deg)`,
-            transformStyle: 'preserve-3d',
-          }}
-        >
-          <div
-            className="absolute inset-x-6 top-0 h-px"
-            style={{ background: 'linear-gradient(90deg, transparent, rgba(245,158,11,0.8), rgba(56,189,248,0.8), transparent)' }}
-          />
-          <div className="relative overflow-hidden rounded-[28px]">
-            <img
-              src={siteContent.heroImage}
-              alt={siteContent.name}
-              className="h-[420px] w-full object-cover md:h-[520px]"
-            />
-            <div
-              className="absolute inset-x-0 bottom-0 p-6"
-              style={{ background: 'linear-gradient(180deg, transparent, var(--hero-overlay-top) 55%, var(--hero-overlay-bottom) 100%)' }}
-            >
-              <div className="mb-2 font-mono text-[0.7rem] uppercase tracking-[0.18em]" style={{ color: 'var(--accent2)' }}>
-                {siteContent.name}
-              </div>
-              <div className="max-w-sm text-2xl font-semibold leading-tight tracking-[-0.03em]">
-                Designing products with cleaner interfaces, clearer logic, and stronger execution.
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

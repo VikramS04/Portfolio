@@ -1,6 +1,7 @@
 export const siteContent = {
   name: 'Vikram Saini',
   shortName: 'Vikram',
+  siteUrl: 'https://vikramsaini.xyz',
   role: 'Full-Stack Web Developer and AI/ML Student',
   headline: 'Full-stack web developer and AI/ML student building polished digital experiences',
   location: 'Jaipur, Rajasthan, India',
