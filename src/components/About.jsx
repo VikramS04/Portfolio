@@ -33,16 +33,16 @@ export default function About() {
   return (
     <section
       id="about"
-      className="section-shell px-6 py-20 md:px-12"
+      className="section-shell px-6 py-16 md:px-12 md:py-20"
       style={{ background: 'var(--section-bg)' }}
     >
-      <div className="mx-auto max-w-7xl">
+      <div className="section-container">
         <SectionHeader label="About Me" title="Who I Am" />
 
-        <div className="grid items-start gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+        <div className="grid items-start gap-8 lg:grid-cols-[0.92fr_1.08fr]">
           <div>
             <Reveal>
-              <div className="glass-panel rounded-[30px] p-6 font-mono text-[0.8rem] leading-8">
+              <div className="glass-panel rounded-[26px] p-5 font-mono text-[0.75rem] leading-7">
                 <div className="mb-4 flex items-center gap-2">
                   <span className="h-3 w-3 rounded-full bg-rose-400" />
                   <span className="h-3 w-3 rounded-full bg-amber-400" />
@@ -60,14 +60,14 @@ export default function About() {
               </div>
             </Reveal>
 
-            <div className="mt-5 grid grid-cols-2 gap-4">
+            <div className="mt-4 grid grid-cols-2 gap-3">
               {stats.map((s, i) => (
                 <Reveal key={s.label} delay={i * 0.08}>
-                  <div className="glass-panel rounded-[24px] p-5">
-                    <div className="font-mono text-[1.8rem] font-extrabold leading-none" style={{ color: 'var(--accent)' }}>
+                  <div className="glass-panel rounded-[20px] p-4">
+                    <div className="font-mono text-[1.5rem] font-extrabold leading-none" style={{ color: 'var(--accent)' }}>
                       {s.num}
                     </div>
-                    <div className="mt-2 font-mono text-[0.68rem] uppercase tracking-[0.16em]" style={{ color: 'var(--muted)' }}>
+                    <div className="mt-2 font-mono text-[0.62rem] uppercase tracking-[0.14em]" style={{ color: 'var(--muted)' }}>
                       {s.label}
                     </div>
                   </div>
@@ -77,35 +77,35 @@ export default function About() {
           </div>
 
           <Reveal direction="left">
-            <div className="glass-panel rounded-[32px] p-7 md:p-8">
-              <p className="mb-5 text-base leading-8 md:text-lg" style={{ color: 'var(--muted)' }}>
+            <div className="glass-panel rounded-[28px] p-6 md:p-7">
+              <p className="mb-4 text-[0.97rem] leading-7 md:text-base" style={{ color: 'var(--muted)' }}>
                 I am a <strong style={{ color: 'var(--text)' }}>3rd-year Computer Science student</strong> at
                 {' '}JECRC University, Jaipur, specializing in <strong style={{ color: 'var(--accent)' }}>AI/ML under the Samatrix track</strong> while actively building strength in{' '}
                 <strong style={{ color: 'var(--accent2)' }}>full-stack web development</strong>.
               </p>
-              <p className="mb-5 text-base leading-8 md:text-lg" style={{ color: 'var(--muted)' }}>
+              <p className="mb-4 text-[0.97rem] leading-7 md:text-base" style={{ color: 'var(--muted)' }}>
                 My recent work reflects both technical depth and range: a <strong style={{ color: 'var(--text)' }}>Data Analysis Internship at Samatrix Consulting Pvt. Ltd.</strong>,
                 a <strong style={{ color: 'var(--text)' }}>Full-Stack Web Development Internship with IAESTE Burundi</strong>, and ongoing leadership in technical operations at IAESTE India LC JECRC.
               </p>
-              <p className="text-base leading-8 md:text-lg" style={{ color: 'var(--muted)' }}>
+              <p className="text-[0.97rem] leading-7 md:text-base" style={{ color: 'var(--muted)' }}>
                 I enjoy working across product UI, APIs, databases, and problem-solving environments like hackathons.
                 That mix of execution, learning speed, and ownership is what I want this portfolio to communicate.
               </p>
 
-              <div className="mt-8 flex flex-col gap-3">
+              <div className="mt-6 flex flex-col gap-3">
                 {infoRows.map((row) => (
                   <div
                     key={row.key}
-                    className="rounded-[22px] px-5 py-4 md:flex md:items-center md:gap-4"
+                    className="rounded-[18px] px-4 py-3.5 md:flex md:items-center md:gap-4"
                     style={{
                       background: 'rgba(148,163,184,0.05)',
                       border: '1px solid rgba(148,163,184,0.12)',
                     }}
                   >
-                    <span className="block min-w-[130px] font-mono text-[0.7rem] uppercase tracking-[0.16em]" style={{ color: 'var(--accent2)' }}>
+                    <span className="block min-w-[120px] font-mono text-[0.62rem] uppercase tracking-[0.14em]" style={{ color: 'var(--accent2)' }}>
                       {row.key}
                     </span>
-                    <span className="mt-2 block text-sm md:mt-0 md:text-base" style={{ color: 'var(--text)' }}>
+                    <span className="mt-2 block text-sm md:mt-0 md:text-[0.95rem]" style={{ color: 'var(--text)' }}>
                       {row.val}
                     </span>
                   </div>

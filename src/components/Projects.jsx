@@ -52,12 +52,12 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="section-shell px-6 py-20 md:px-12" style={{ background: 'var(--section-bg)' }}>
-      <div className="mx-auto max-w-7xl">
+    <section id="projects" className="section-shell px-6 py-16 md:px-12 md:py-20" style={{ background: 'var(--section-bg)' }}>
+      <div className="section-container">
         <SectionHeader label="Featured Work" title="Projects" />
 
-        <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <p className="max-w-2xl text-base leading-8 md:text-lg" style={{ color: 'var(--muted)' }}>
+        <div className="mb-6 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <p className="max-w-2xl text-[0.97rem] leading-7 md:text-base" style={{ color: 'var(--muted)' }}>
             This section now reflects the stronger project information from your resume and IAESTE factsheets:
             hackathon work, backend systems, manufacturing monitoring concepts, and analytical internship projects.
           </p>
@@ -65,7 +65,7 @@ export default function Projects() {
             href="https://github.com/VikramS04"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center rounded-full px-5 py-3 font-mono text-xs uppercase tracking-[0.16em] no-underline"
+            className="inline-flex items-center justify-center rounded-full px-4 py-2.5 font-mono text-[0.68rem] uppercase tracking-[0.14em] no-underline"
             style={{
               background: 'rgba(56,189,248,0.08)',
               border: '1px solid rgba(56,189,248,0.18)',
@@ -76,7 +76,7 @@ export default function Projects() {
           </a>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
           {projects.map((p, i) => (
             <ProjectCard key={p.num} project={p} index={i} />
           ))}
@@ -86,10 +86,10 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.6, delay: projects.length * 0.07 }}
-            className="glass-panel flex min-h-[260px] flex-col items-center justify-center rounded-[30px] border border-dashed text-center"
+            className="glass-panel flex min-h-[220px] flex-col items-center justify-center rounded-[24px] border border-dashed text-center"
           >
-            <div className="mb-2 font-mono text-4xl" style={{ color: 'var(--accent)' }}>+</div>
-            <div className="font-mono text-[0.72rem] uppercase tracking-[0.18em]" style={{ color: 'var(--muted)' }}>
+            <div className="mb-2 font-mono text-3xl" style={{ color: 'var(--accent)' }}>+</div>
+            <div className="font-mono text-[0.66rem] uppercase tracking-[0.16em]" style={{ color: 'var(--muted)' }}>
               More work can be added as new projects ship
             </div>
           </motion.div>
@@ -111,7 +111,7 @@ function ProjectCard({ project: p, index }) {
       transition={{ duration: 0.6, delay: index * 0.07, ease: [0.16, 1, 0.3, 1] }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="glass-panel project-card relative flex h-full cursor-default flex-col overflow-hidden rounded-[30px] p-7 transition-all duration-300"
+      className="glass-panel project-card relative flex h-full cursor-default flex-col overflow-hidden rounded-[24px] p-5 transition-all duration-300"
       style={{
         border: hovered ? '1px solid rgba(245,158,11,0.35)' : '1px solid rgba(148,163,184,0.14)',
         transform: hovered ? 'translateY(-6px)' : 'translateY(0)',
@@ -129,7 +129,7 @@ function ProjectCard({ project: p, index }) {
 
       {p.badge && (
         <div
-          className="absolute right-5 top-5 rounded-full px-3 py-1 font-mono text-[0.6rem] uppercase tracking-[0.14em]"
+          className="absolute right-4 top-4 rounded-full px-3 py-1 font-mono text-[0.56rem] uppercase tracking-[0.12em]"
           style={{
             background: 'rgba(52,211,153,0.12)',
             border: '1px solid rgba(52,211,153,0.22)',
@@ -140,21 +140,21 @@ function ProjectCard({ project: p, index }) {
         </div>
       )}
 
-      <div className="mb-4 font-mono text-[0.68rem] uppercase tracking-[0.16em]" style={{ color: 'var(--muted)' }}>
+      <div className="mb-3 font-mono text-[0.62rem] uppercase tracking-[0.14em]" style={{ color: 'var(--muted)' }}>
         {p.num} —
       </div>
-      <div className="mb-3 text-xl font-bold tracking-[-0.02em]">
+      <div className="mb-2 text-[1.05rem] font-bold tracking-[-0.02em]">
         {p.name}
       </div>
-      <div className="mb-6 flex-1 text-sm leading-7 md:text-[0.95rem]" style={{ color: 'var(--muted)' }}>
+      <div className="mb-5 flex-1 text-[0.92rem] leading-6" style={{ color: 'var(--muted)' }}>
         {p.desc}
       </div>
 
-      <div className="mb-6 flex flex-wrap gap-2">
+      <div className="mb-5 flex flex-wrap gap-2">
         {p.stack.map((s) => (
           <span
             key={s}
-            className="rounded-full px-3 py-2 font-mono text-[0.62rem] uppercase tracking-[0.08em]"
+            className="rounded-full px-3 py-1.5 font-mono text-[0.56rem] uppercase tracking-[0.08em]"
             style={{
               background: 'rgba(56,189,248,0.08)',
               border: '1px solid rgba(56,189,248,0.18)',
@@ -179,7 +179,7 @@ function ProjectCard({ project: p, index }) {
 
 const linkStyle = {
   fontFamily: 'var(--font-mono)',
-  fontSize: '0.68rem',
+  fontSize: '0.62rem',
   color: 'var(--text)',
   textDecoration: 'none',
   letterSpacing: '0.12em',
@@ -188,7 +188,7 @@ const linkStyle = {
   display: 'inline-flex',
   alignItems: 'center',
   gap: '0.3rem',
-  padding: '0.75rem 1rem',
+  padding: '0.65rem 0.9rem',
   borderRadius: '999px',
   border: '1px solid rgba(148,163,184,0.14)',
   background: 'rgba(148,163,184,0.05)',
@@ -196,7 +196,7 @@ const linkStyle = {
 
 const metaStyle = {
   fontFamily: 'var(--font-mono)',
-  fontSize: '0.68rem',
+  fontSize: '0.62rem',
   color: 'var(--muted)',
   letterSpacing: '0.12em',
   textTransform: 'uppercase',

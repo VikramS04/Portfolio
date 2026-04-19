@@ -74,7 +74,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="section-shell relative overflow-hidden px-6 pb-16 pt-28 md:px-12 md:pb-20 md:pt-32"
+      className="section-shell relative overflow-hidden px-6 pb-14 pt-24 md:px-12 md:pb-16 md:pt-28"
       style={{ minHeight: '100vh' }}
     >
       <div
@@ -86,7 +86,7 @@ export default function Hero() {
         style={{ background: 'rgba(56,189,248,0.16)' }}
       />
 
-      <div className="relative z-[1] mx-auto grid max-w-7xl items-start gap-8 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-12">
+      <div className="section-container relative z-[1] grid items-start gap-6 lg:grid-cols-[1fr_0.96fr] lg:items-center lg:gap-10">
         <motion.div
           initial={{ opacity: 0, y: 40, scale: 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -94,7 +94,7 @@ export default function Hero() {
           className="order-1 lg:order-2"
         >
           <motion.div
-            className="glass-panel relative overflow-hidden rounded-[32px] p-4 md:rounded-[38px] md:p-5"
+            className="glass-panel relative overflow-hidden rounded-[28px] p-3 md:rounded-[32px] md:p-4"
             onMouseMove={handleCardMove}
             onMouseLeave={() => setTilt({ x: 0, y: 0 })}
             style={{
@@ -114,10 +114,26 @@ export default function Hero() {
               <img
                 src={siteContent.heroImage}
                 alt={siteContent.name}
-                className="hero-avatar h-[320px] w-full object-cover object-top sm:h-[420px] md:h-[560px]"
+                className="hero-avatar h-[300px] w-full object-cover object-top sm:h-[390px] md:h-[500px]"
               />
               <div
-                className="absolute inset-x-0 bottom-0 p-5 md:p-6"
+                className="absolute inset-x-0 top-0 p-4 md:hidden"
+                style={{
+                  background: 'linear-gradient(180deg, var(--hero-overlay-bottom) 0%, transparent 100%)',
+                }}
+              >
+                <div
+                  className="font-mono text-[0.68rem] uppercase tracking-[0.18em]"
+                  style={{ color: 'var(--accent2)' }}
+                >
+                  Hi, I&apos;m
+                </div>
+                <div className="mt-2 text-[clamp(1.8rem,7vw,2.7rem)] font-bold leading-none tracking-[-0.04em]">
+                  Vikram Saini
+                </div>
+              </div>
+              <div
+                className="absolute inset-x-0 bottom-0 p-4 md:p-5"
                 style={{
                   background:
                     'linear-gradient(180deg, transparent, var(--hero-overlay-top) 55%, var(--hero-overlay-bottom) 100%)',
@@ -129,7 +145,7 @@ export default function Hero() {
                 >
                   Full-Stack Web Developer
                 </div>
-                <div className="max-w-sm text-xl font-semibold leading-tight tracking-[-0.03em] md:text-2xl">
+                <div className="max-w-sm text-lg font-semibold leading-tight tracking-[-0.03em] md:text-[1.35rem]">
                   Building products with cleaner interfaces, clearer logic, and stronger execution.
                 </div>
               </div>
@@ -139,12 +155,12 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.85 }}
-              className="mt-4 grid gap-3 sm:grid-cols-2"
+              className="mt-3 grid gap-3 sm:grid-cols-2"
             >
               {featureCards.map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-[22px] px-4 py-4"
+                  className="rounded-[20px] px-4 py-3.5"
                   style={{
                     background: 'rgba(148,163,184,0.05)',
                     border: '1px solid rgba(148,163,184,0.12)',
@@ -156,7 +172,7 @@ export default function Hero() {
                   >
                     {item.title}
                   </div>
-                  <div className="text-sm leading-6" style={{ color: 'var(--muted)' }}>
+                  <div className="text-[0.92rem] leading-6" style={{ color: 'var(--muted)' }}>
                     {item.text}
                   </div>
                 </div>
@@ -170,7 +186,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="mb-5 inline-flex items-center gap-2 rounded-full px-4 py-2 font-mono text-[0.72rem] uppercase tracking-[0.18em]"
+            className="mb-4 inline-flex items-center gap-2 rounded-full px-4 py-2 font-mono text-[0.68rem] uppercase tracking-[0.18em]"
             style={{
               color: 'var(--text)',
               border: '1px solid rgba(148,163,184,0.16)',
@@ -183,7 +199,7 @@ export default function Hero() {
             <style>{`@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}`}</style>
           </motion.div>
 
-          <h1 className="mb-5 max-w-3xl text-[clamp(2.8rem,6vw,5.2rem)] font-bold leading-[0.98] tracking-[-0.05em]">
+          <h1 className="mb-4 hidden max-w-3xl text-[clamp(2.5rem,5vw,4.4rem)] font-bold leading-[0.98] tracking-[-0.05em] md:block">
             <motion.span
               initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
@@ -207,7 +223,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.62 }}
-            className="mb-5 max-w-2xl font-mono text-[0.76rem] uppercase tracking-[0.18em]"
+            className="mb-4 max-w-2xl font-mono text-[0.7rem] uppercase tracking-[0.18em]"
             style={{ color: 'var(--muted)' }}
           >
             Full-Stack Web Developer · AI/ML Student · Jaipur, India
@@ -217,7 +233,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.85 }}
-            className="mb-7 max-w-2xl text-base leading-8 md:text-xl"
+            className="mb-6 max-w-2xl text-[0.98rem] leading-7 md:text-[1.06rem]"
             style={{ color: 'var(--muted)' }}
           >
             I build responsive products, backend systems, and data-driven solutions with a strong
@@ -229,12 +245,12 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.95 }}
-            className="mb-7 flex flex-wrap gap-3"
+            className="mb-6 flex flex-wrap gap-2.5"
           >
             {profileHighlights.map((item) => (
               <span
                 key={item}
-                className="chip px-4 py-2 font-mono text-[0.72rem] uppercase tracking-[0.12em]"
+                className="chip px-3.5 py-1.5 font-mono text-[0.66rem] uppercase tracking-[0.12em]"
                 style={{ color: 'var(--text)' }}
               >
                 {item}
@@ -246,13 +262,13 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.05 }}
-            className="mb-8 flex flex-wrap gap-4"
+            className="mb-7 flex flex-wrap gap-3"
           >
             <a href="#projects" style={btnPrimary}>
               View Projects
             </a>
-            <a href={siteContent.resumeFile} download style={btnOutline}>
-              Download Resume
+            <a href={siteContent.resumeFile} target="_blank" rel="noreferrer" style={btnOutline}>
+              View Resume
             </a>
             <a href={siteContent.linkedin} target="_blank" rel="noreferrer" style={btnGhost}>
               LinkedIn
@@ -266,17 +282,17 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.12 }}
-            className="grid gap-4 sm:grid-cols-3"
+            className="grid gap-3 sm:grid-cols-3"
           >
             {quickStats.map((item) => (
-              <div key={item.label} className="glass-panel rounded-[24px] p-5">
+              <div key={item.label} className="glass-panel rounded-[20px] p-4">
                 <div
-                  className="mb-2 font-mono text-xs uppercase tracking-[0.18em]"
+                  className="mb-2 font-mono text-[0.68rem] uppercase tracking-[0.16em]"
                   style={{ color: 'var(--accent2)' }}
                 >
                   {item.label}
                 </div>
-                <div className="text-lg font-semibold tracking-[-0.02em]">{item.value}</div>
+                <div className="text-base font-semibold tracking-[-0.02em]">{item.value}</div>
               </div>
             ))}
           </motion.div>
@@ -291,12 +307,12 @@ const btnPrimary = {
   alignItems: 'center',
   justifyContent: 'center',
   gap: '0.5rem',
-  padding: '0.95rem 1.5rem',
+  padding: '0.82rem 1.25rem',
   background: 'linear-gradient(135deg, var(--accent), #f97316)',
   color: '#08111b',
   fontWeight: 800,
-  fontSize: '0.82rem',
-  letterSpacing: '0.1em',
+  fontSize: '0.74rem',
+  letterSpacing: '0.09em',
   textDecoration: 'none',
   borderRadius: '999px',
   border: 'none',
@@ -311,12 +327,12 @@ const btnOutline = {
   alignItems: 'center',
   justifyContent: 'center',
   gap: '0.5rem',
-  padding: '0.95rem 1.5rem',
+  padding: '0.82rem 1.25rem',
   background: 'rgba(56,189,248,0.08)',
   color: 'var(--text)',
   fontWeight: 700,
-  fontSize: '0.82rem',
-  letterSpacing: '0.1em',
+  fontSize: '0.74rem',
+  letterSpacing: '0.09em',
   textDecoration: 'none',
   borderRadius: '999px',
   border: '1px solid rgba(56,189,248,0.22)',
@@ -330,12 +346,12 @@ const btnGhost = {
   alignItems: 'center',
   justifyContent: 'center',
   gap: '0.5rem',
-  padding: '0.95rem 1.5rem',
+  padding: '0.82rem 1.25rem',
   background: 'rgba(148,163,184,0.06)',
   color: 'var(--text)',
   fontWeight: 700,
-  fontSize: '0.82rem',
-  letterSpacing: '0.1em',
+  fontSize: '0.74rem',
+  letterSpacing: '0.09em',
   textDecoration: 'none',
   borderRadius: '999px',
   border: '1px solid rgba(148,163,184,0.14)',

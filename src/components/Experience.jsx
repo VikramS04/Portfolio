@@ -125,15 +125,15 @@ const colLabel = (text) => (
 
 export default function Experience() {
   return (
-    <section id="experience" className="section-shell px-6 py-20 md:px-12">
-      <div className="mx-auto max-w-7xl">
+    <section id="experience" className="section-shell px-6 py-16 md:px-12 md:py-20">
+      <div className="section-container">
         <SectionHeader label="Experience & Education" title="My Journey" />
-        <div className="grid gap-8 lg:grid-cols-2">
-          <div className="glass-panel rounded-[30px] p-7 md:p-8">
+        <div className="grid gap-6 lg:grid-cols-2">
+          <div className="glass-panel rounded-[24px] p-6 md:p-7">
             {colLabel('// Work Experience')}
             <Timeline items={work} />
           </div>
-          <div className="glass-panel rounded-[30px] p-7 md:p-8">
+          <div className="glass-panel rounded-[24px] p-6 md:p-7">
             {colLabel('// Education')}
             <Timeline items={education} />
           </div>

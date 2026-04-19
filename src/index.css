@@ -132,6 +132,11 @@ body::before {
   backdrop-filter: blur(18px);
 }
 
+.section-container {
+  max-width: 76rem;
+  margin: 0 auto;
+}
+
 .section-shell {
   position: relative;
   isolation: isolate;
@@ -185,5 +190,18 @@ body::before {
     flex-direction: column;
     gap: 0.5rem;
     text-align: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  #hero,
+  #about,
+  #skills,
+  #projects,
+  #experience,
+  #certificates,
+  #contact {
+    padding-top: 5.5rem !important;
+    padding-bottom: 5.5rem !important;
   }
 }

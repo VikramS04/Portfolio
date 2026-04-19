@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export default function SectionHeader({ label, title }) {
   return (
-    <div className="mb-12">
+    <div className="mb-10">
       <div
         className="mb-3 flex items-center gap-3 font-mono text-[0.68rem] uppercase tracking-[0.24em]"
         style={{ color: 'var(--accent2)' }}
@@ -20,7 +20,7 @@ export default function SectionHeader({ label, title }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-50px' }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        className="max-w-2xl text-[clamp(2rem,4vw,3.5rem)] font-extrabold leading-none tracking-[-0.03em]"
+        className="max-w-2xl text-[clamp(1.8rem,3.2vw,3rem)] font-extrabold leading-none tracking-[-0.03em]"
       >
         {title}
       </motion.h2>
