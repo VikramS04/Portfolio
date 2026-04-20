@@ -1,0 +1,30 @@
+{
+  "headers": [
+    {
+      "source": "/vikram-avatar.avif",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        },
+        {
+          "key": "Expires",
+          "value": "Tue, 31 Dec 2030 23:59:59 GMT"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        },
+        {
+          "key": "Expires",
+          "value": "Tue, 31 Dec 2030 23:59:59 GMT"
+        }
+      ]
+    }
+  ]
+}

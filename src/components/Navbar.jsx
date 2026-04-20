@@ -7,11 +7,36 @@ const links = ['about', 'skills', 'projects', 'experience', 'certificates', 'con
 
 export default function Navbar({ theme, onToggleTheme }) {
   const [scrolled, setScrolled] = useState(false);
+  const [activeLink, setActiveLink] = useState('about');
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40);
+      const scrollPosition = window.scrollY + 160;
+      let current = links[0];
+
+      links.forEach((link) => {
+        const section = document.getElementById(link);
+        if (section && scrollPosition >= section.offsetTop) {
+          current = link;
+        }
+      });
+
+      setActiveLink(current);
+    };
+
+    const onHashChange = () => {
+      const hash = window.location.hash.replace('#', '');
+      if (links.includes(hash)) setActiveLink(hash);
+    };
+
+    onScroll();
     window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener('hashchange', onHashChange);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('hashchange', onHashChange);
+    };
   }, []);
 
   return (
@@ -54,9 +79,14 @@ export default function Navbar({ theme, onToggleTheme }) {
             <a
               href={`#${link}`}
               className="font-mono text-xs uppercase tracking-[0.18em] no-underline transition-colors duration-200"
-              style={{ color: 'var(--muted)' }}
+              style={{
+                color: activeLink === link ? 'var(--text)' : 'var(--muted)',
+                textDecoration: activeLink === link ? 'underline' : 'none',
+                textUnderlineOffset: '0.45rem',
+                textDecorationColor: activeLink === link ? 'var(--accent)' : 'transparent',
+              }}
               onMouseEnter={(e) => (e.target.style.color = 'var(--text)')}
-              onMouseLeave={(e) => (e.target.style.color = 'var(--muted)')}
+              onMouseLeave={(e) => (e.target.style.color = activeLink === link ? 'var(--text)' : 'var(--muted)')}
             >
               {link}
             </a>
