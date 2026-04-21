@@ -5,46 +5,46 @@ import SectionHeader from './SectionHeader';
 const projects = [
   {
     num: '01',
+    name: 'Track-it',
+    desc: 'A full-stack finance app built with React, Node.js, Express, and MongoDB, featuring JWT authentication, secure transactions, and category-based expense tracking. Includes an interactive dashboard with real-time insights and responsive design, deployed via Vercel and Render.',
+    stack: ['Node.js', 'MySQL', 'REST APIs', 'Authentication', 'RBAC'],
+    live: 'https://track-it-mocha-six.vercel.app/',
+    github: 'https://github.com/VikramS04/Track-It-Frontend',
+    badge: 'PERSONAL PROJECT',
+  },
+  {
+    num: '02',
     name: 'Krishi AI',
     desc: 'A full-stack agriculture support platform built during a hackathon to help farmers with data-backed decisions. It combines a React frontend, Express backend, MySQL data workflows, and AI/ML-assisted crop guidance and agricultural insights.',
     stack: ['React.js', 'Express.js', 'MySQL', 'REST APIs', 'Machine Learning'],
     live: 'https://krishi-ai-ecru.vercel.app/',
-    github: null,
+    github: 'https://github.com/VikramS04/KrishiAi',
     badge: 'HACKATHON',
   },
-  {
-    num: '02',
-    name: 'Track-it',
-    desc: 'A backend-focused financial record management system centered on secure transactions, authentication, and structured relational data design. Built to handle transaction creation, updates, and reliable data retrieval with ACID-compliant operations.',
-    stack: ['Node.js', 'MySQL', 'REST APIs', 'Authentication', 'RBAC'],
-    live: null,
-    github: null,
-    badge: 'BACKEND',
-  },
+  // {
+  //   num: '03',
+  //   name: 'ManuSight',
+  //   desc: 'A simulated FMCG production monitoring system designed to track machine-level output, downtime events, and fault thresholds. The architecture was planned to adapt to IoT-style ingestion and automated performance reporting.',
+  //   stack: ['System Design', 'Reporting', 'Industrial Monitoring', 'Data Workflows'],
+  //   live: null,
+  //   github: null,
+  //   badge: 'SYSTEM DESIGN',
+  // },
   {
     num: '03',
-    name: 'ManuSight',
-    desc: 'A simulated FMCG production monitoring system designed to track machine-level output, downtime events, and fault thresholds. The architecture was planned to adapt to IoT-style ingestion and automated performance reporting.',
-    stack: ['System Design', 'Reporting', 'Industrial Monitoring', 'Data Workflows'],
-    live: null,
-    github: null,
-    badge: 'SYSTEM DESIGN',
-  },
-  {
-    num: '04',
     name: 'Safelance',
     desc: 'A freelancer client payment app listed in your resume project work. It reflects your interest in practical web products that solve trust, workflow, and payment-related problems through web interfaces.',
     stack: ['Full Stack', 'Product UI', 'Payments', 'Web App'],
     live: null,
     github: null,
-    badge: null,
+    badge: 'HACKATHON',
   },
   {
-    num: '05',
+    num: '04',
     name: 'Data Analysis Internship Projects',
     desc: 'A set of applied internship projects covering stock risk modeling (VaR), IPL data analysis, A/B testing simulation, hypothesis testing, and survival analysis using Kaplan-Meier and Cox regression.',
     stack: ['Python', 'Statistics', 'A/B Testing', 'Survival Analysis', 'Data Analysis'],
-    live: null,
+    live: 'https://drive.google.com/drive/u/1/folders/10oropKDW0tXnB1v6IegY4D2BEuv5PsY3',
     github: null,
     badge: 'INTERNSHIP',
   },
@@ -80,7 +80,7 @@ export default function Projects() {
             <ProjectCard key={p.num} project={p} index={i} />
           ))}
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}
@@ -91,7 +91,7 @@ export default function Projects() {
             <div className="font-mono text-[0.66rem] uppercase tracking-[0.16em]" style={{ color: 'var(--muted)' }}>
               More work can be added as new projects ship
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </section>
@@ -166,8 +166,8 @@ function ProjectCard({ project: p, index }) {
       </div>
 
       <div className="flex flex-wrap gap-4">
-        {p.live && <a href={p.live} style={linkStyle}>Live Demo</a>}
-        {p.github && <a href={p.github} style={linkStyle}>GitHub</a>}
+        {p.live && <a href={p.live} style={linkStyle} target="_blank" rel="noopener noreferrer">Live Demo</a>}
+        {p.github && <a href={p.github} style={linkStyle} target="_blank" rel="noopener noreferrer">GitHub</a>}
         {!p.live && !p.github && (
           <span style={metaStyle}>Portfolio summary card</span>
         )}

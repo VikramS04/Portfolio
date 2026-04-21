@@ -3,17 +3,17 @@ import { motion } from 'framer-motion';
 import SectionHeader from './SectionHeader';
 
 const stats = [
-  { num: '3rd', label: 'Year B.Tech' },
-  { num: '2027', label: 'Graduation target' },
-  { num: '2025', label: 'Internship year' },
-  { num: '5+', label: 'Projects & case builds' },
+  { num: '3rd Year', label: 'B.Tech CSE (AI/ML)' },
+  { num: '2027', label: 'Graduating' },
+  { num: '15+', label: 'Projects & Systems Built' },
+  { num: 'Open', label: 'To Internships' },
 ];
 
 const infoRows = [
-  { key: '// location', val: 'Jaipur, Rajasthan, India' },
-  { key: '// focus', val: 'Full-stack web development · AI/ML · data analysis' },
-  { key: '// leadership', val: 'Head, Information Technology & Data Analytics at IAESTE India LC JECRC' },
-  { key: '// seeking', val: 'Internships · global exposure · growth-focused teams' },
+  { key: '// based_in', val: 'Jaipur, India' },
+  { key: '// focus', val: 'Full-Stack · AI/ML · Data Systems' },
+  { key: '// leading', val: 'IT-DA @ IAESTE LC JECRC' },
+  { key: '// exploring', val: 'Internships · Global Teams · Real-World Problems' },
 ];
 
 function Reveal({ children, delay = 0, direction = 'up' }) {
@@ -81,7 +81,7 @@ export default function About() {
               <p className="mb-4 text-[0.97rem] leading-7 md:text-base" style={{ color: 'var(--muted)' }}>
                 I am a <strong style={{ color: 'var(--text)' }}>3rd-year Computer Science student</strong> at
                 {' '}JECRC University, Jaipur, specializing in <strong style={{ color: 'var(--accent)' }}>AI/ML under the Samatrix.io</strong> while actively building strength in{' '}
-                <strong style={{ color: 'var(--accent2)' }}>full-stack web development</strong>.
+                <strong style={{ color: 'var(--accent2)' }}>full-stack development</strong>.
               </p>
               <p className="mb-4 text-[0.97rem] leading-7 md:text-base" style={{ color: 'var(--muted)' }}>
                 My recent work reflects both technical depth and range: a <strong style={{ color: 'var(--text)' }}>Data Analysis Internship at Samatrix Consulting Pvt. Ltd.</strong>,

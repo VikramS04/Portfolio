@@ -3,29 +3,29 @@ import { motion } from 'framer-motion';
 import { siteContent } from '../content/siteContent';
 
 const roles = [
-  '3rd Year B.Tech CSE (AI/ML) @ JECRC University',
-  'Head of IT & Data Analytics @ IAESTE India LC JECRC',
-  'Data Analysis Intern @ Samatrix Consulting',
-  'Full-Stack Web Development Intern @ IAESTE Burundi',
-  'Hackathon Builder Working on Practical Products',
+  'B.Tech CSE (AI/ML), 3rd Year - JECRC University',
+  'Head, Information Technology & Data Analytics - IAESTE LC JECRC',
+  'Data Analysis Intern - Samatrix Consulting',
+  'Full-Stack Developer Intern - IAESTE Burundi',
+  'Building Real-World Systems & Hackathon Projects',
 ];
 
-const profileHighlights = ['Full Stack', 'AI/ML', 'Data Analysis', 'Leadership'];
+const profileHighlights = ['Full-Stack', 'Backend Systems', 'AI/ML', 'Data & Analytics'];
 
 const quickStats = [
   { value: '3rd Year', label: 'B.Tech CSE (AI/ML)' },
-  { value: '2025', label: 'Internship year' },
-  { value: '2027', label: 'Expected graduation' },
+  { value: 'Opportunities', label: 'Seeking' },
+  { value: '2027', label: 'Graduating' },
 ];
 
 const featureCards = [
   {
     title: 'Product-focused',
-    text: 'Clean interfaces, scalable flows, and practical problem solving.',
+    text: 'Designing systems that are intuitive, scalable, and built to solve actual problems.',
   },
   {
     title: 'Hands-on',
-    text: 'Internships, hackathons, full-stack builds, and technical leadership.',
+    text: 'Learning by building - through internships, hackathons, and end-to-end projects.',
   },
 ];
 
@@ -126,7 +126,7 @@ export default function Hero() {
                   className="font-mono text-[0.68rem] uppercase tracking-[0.18em]"
                   style={{ color: 'var(--accent2)' }}
                 >
-                  Hi, I&apos;m
+                  Hey, I&apos;m
                 </div>
                 <div className="mt-2 text-[clamp(1.8rem,7vw,2.7rem)] font-bold leading-none tracking-[-0.04em]">
                   Vikram Saini
@@ -140,13 +140,13 @@ export default function Hero() {
                 }}
               >
                 <div
-                  className="mb-2 font-mono text-[0.68rem] uppercase tracking-[0.18em]"
-                  style={{ color: 'var(--accent2)' }}
+                  className="mb-2 font-mono text-[0.78rem] uppercase tracking-[0.18em]"
+                  style={{ color: '#A829D6', fontWeight: 900, WebkitTextStroke: '0.08px black', }}
                 >
-                  Full-Stack Web Developer
+                  Full-Stack Developer
                 </div>
                 <div className="max-w-sm text-lg font-semibold leading-tight tracking-[-0.03em] md:text-[1.35rem]">
-                  Building products with cleaner interfaces, clearer logic, and stronger execution.
+                  I build products that balance clean design, solid backend logic, and real-world usability.
                 </div>
               </div>
             </div>
@@ -207,7 +207,7 @@ export default function Hero() {
               className="block font-mono text-sm uppercase tracking-[0.2em] md:text-base"
               style={{ color: 'var(--accent2)' }}
             >
-              Hi, I&apos;m
+              Hey, I&apos;m
             </motion.span>
             <motion.span
               initial={{ opacity: 0, x: 20 }}
@@ -226,7 +226,7 @@ export default function Hero() {
             className="mb-4 max-w-2xl font-mono text-[0.7rem] uppercase tracking-[0.18em]"
             style={{ color: 'var(--muted)' }}
           >
-            Full-Stack Web Developer · AI/ML Student · Jaipur, India
+            Full-Stack Developer · AI/ML Enthusiast · Jaipur, India
           </motion.div>
 
           <motion.p
@@ -236,9 +236,7 @@ export default function Hero() {
             className="mb-6 max-w-2xl text-[0.98rem] leading-7 md:text-[1.06rem]"
             style={{ color: 'var(--muted)' }}
           >
-            I build responsive products, backend systems, and data-driven solutions with a strong
-            focus on clarity, usability, and real-world execution. My work spans web development,
-            data analysis, hackathons, and technical leadership through IAESTE India LC JECRC.
+           I build full-stack applications, backend systems, and data-driven solutions focused on solving real-world problems. My work spans web development, system design, and analytics, with hands-on experience through hackathons, projects, and leadership at IAESTE India LC JECRC.
           </motion.p>
 
           <motion.div

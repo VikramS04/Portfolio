@@ -4,16 +4,56 @@ import { FiArrowUpRight, FiExternalLink, FiFileText } from 'react-icons/fi';
 import SectionHeader from './SectionHeader';
 import { siteContent } from '../content/siteContent';
 
+// const certificateGroups = [
+//   {
+//     eyebrow: 'Frontend and Full Stack',
+//     title: 'Web development certificates',
+//     accent: 'var(--accent)',
+//     items: [
+//       'React by Udemy',
+//       'HTML, CSS, JavaScript and PHP by Udemy',
+//       'Full Stack Web Development',
+//       'Full Stack Intern Internship by IAESTE',
+//     ],
+//   },
+//   {
+//     eyebrow: 'Programming and Data',
+//     title: 'Core technical foundations',
+//     accent: 'var(--accent2)',
+//     items: [
+//       'Relational Databases and SQL by Udemy',
+//       'Data Structures and OOP with C++',
+//       'Python Programming by Udemy',
+//       'JavaScript Project Course by Udemy',
+//     ],
+//   },
+//   {
+//     eyebrow: 'AI and Analytics',
+//     title: 'AI, ML and analysis learning',
+//     accent: 'var(--accent3)',
+//     items: [
+//       'Foundation to AI, Data Science and Data Analytics by Samatrix.io',
+//       'Data Analysis Internship Completion by Samatrix.io',
+//       'Deep Learning by Samatrix',
+//       'Advanced Machine Learning by Samatrix',
+//       'Natural Language Processing in Python',
+//     ],
+//   },
+// ];
+
 const certificateGroups = [
   {
     eyebrow: 'Frontend and Full Stack',
     title: 'Web development certificates',
     accent: 'var(--accent)',
     items: [
-      'React by Udemy',
-      'HTML, CSS, JavaScript and PHP by Udemy',
-      'Full Stack Web Development',
-      'Full Stack Intern Internship by IAESTE',
+      { name: 'React by Udemy', 
+        url: 'https://www.udemy.com/certificate/UC-537eb902-e541-43c2-b6e5-6b8d8da93893/' 
+      },
+      { name: 'Full Stack Web Development by Udemy', 
+        url: 'https://www.udemy.com/certificate/UC-7e62cdf9-0f46-454c-9076-983aa86d663d/' },
+      { name: 'Typescript', url: 'https://www.udemy.com/certificate/UC-58996b2b-5500-4fac-a3ee-8f0023f058c8/'},
+      { name: 'Full Stack Internship by IAESTE', url: '/assets/BI-2025-COMP03_Vikram_Saini_Certificate.pdf' },
     ],
   },
   {
@@ -21,10 +61,10 @@ const certificateGroups = [
     title: 'Core technical foundations',
     accent: 'var(--accent2)',
     items: [
-      'Relational Databases and SQL by Udemy',
-      'Data Structures and OOP with C++',
-      'Python Programming by Udemy',
-      'JavaScript Project Course by Udemy',
+      { name: 'Relational Databases and SQL by Udemy', url: 'https://www.udemy.com/certificate/UC-82ac2343-1400-4550-b398-8d0845bcd3cc/' },
+      { name: 'Data Structures and OOP with C++', url: 'https://www.udemy.com/certificate/UC-8cafe9cd-43b8-48f0-8f63-b54088f15e55/' },
+      { name: 'Python and Django by Udemy', url: '' },
+      { name: 'JavaScript Project Course by Udemy', url: 'https://www.udemy.com/certificate/UC-bf049874-f2f0-4489-8ab3-7f4a70d17fd0/' },
     ],
   },
   {
@@ -32,20 +72,19 @@ const certificateGroups = [
     title: 'AI, ML and analysis learning',
     accent: 'var(--accent3)',
     items: [
-      'Foundation to AI, Data Science and Data Analytics by Samatrix.io',
-      'Data Analysis Internship Completion by Samatrix.io',
-      'Deep Learning by Samatrix',
-      'Advanced Machine Learning by Samatrix',
-      'Natural Language Processing in Python',
+      { name: 'Data Analysis Internship Completion by Samatrix.io', url: '/assets/Data_Analysis_Internship_Samatrix.pdf' },
+      { name: 'Machine Learning and Pattern Recognition', url: 'https://verify.netcredential.com/roy8h5qFox' },
+      { name: 'Advanced Machine Learning by Samatrix', url: 'https://verify.netcredential.com/roy86GYHxs' },
+      { name: 'Neural Networks and Deep Learning', url: 'https://verify.netcredential.com/roy8ANAgNJ' },
     ],
   },
 ];
 
-const resumeHighlights = [
-  'Internship and leadership experience',
-  'Full-stack and AI/ML project work',
-  'Certificates and academic background',
-];
+// const resumeHighlights = [
+//   'Internship and leadership experience',
+//   'Full-stack and AI/ML project work',
+//   'Certificates and academic background',
+// ];
 
 export default function Certificates() {
   return (
@@ -53,8 +92,8 @@ export default function Certificates() {
       <div className="section-container">
         <SectionHeader label="Certificates & Resume" title="Credentials That Back The Work" />
 
-        <div className="mb-8 grid gap-5 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch">
-          <motion.div
+        <div className="mb-8 gap-5 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch">
+          {/* <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}
@@ -79,7 +118,7 @@ export default function Certificates() {
               shown throughout the portfolio. Instead of treating them like a long list, they are grouped by
               the skills they reinforce.
             </p>
-          </motion.div>
+          </motion.div> */}
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -107,7 +146,7 @@ export default function Certificates() {
                 and education in one place.
               </p>
 
-              <div className="mb-6 space-y-3">
+              {/* <div className="mb-6 space-y-3">
                 {resumeHighlights.map((item) => (
                   <div
                     key={item}
@@ -123,7 +162,7 @@ export default function Certificates() {
                     </span>
                   </div>
                 ))}
-              </div>
+              </div> */}
 
               <div className="flex flex-col gap-3 sm:flex-row">
                 <a
@@ -158,7 +197,7 @@ export default function Certificates() {
           </motion.div>
         </div>
 
-        <div className="grid gap-5 xl:grid-cols-3">
+        <div className="grid gap-5 grid-cols-1 md:grid-cols-3">
           {certificateGroups.map((group, index) => (
             <motion.div
               key={group.title}
@@ -177,8 +216,11 @@ export default function Certificates() {
 
               <div className="space-y-3">
                 {group.items.map((item, itemIndex) => (
-                  <div
-                    key={item}
+                  <a
+                    key={item.name}
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="rounded-[18px] px-4 py-3.5"
                     style={{
                       background:
@@ -190,9 +232,9 @@ export default function Certificates() {
                       Certificate
                     </div>
                     <div className="text-sm leading-6 md:text-[0.95rem]" style={{ color: 'var(--text)' }}>
-                      {item}
+                      {item.name}
                     </div>
-                  </div>
+                  </a>
                 ))}
               </div>
             </motion.div>

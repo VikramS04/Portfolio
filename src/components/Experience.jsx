@@ -4,21 +4,21 @@ import SectionHeader from './SectionHeader';
 
 const work = [
   {
-    date: 'SEP 2025 — PRESENT',
+    date: 'SEP 2025 - PRESENT',
     role: 'Head, Information Technology and Data Analytics',
     company: 'IAESTE India LC JECRC',
     desc: 'Leading the Information Technology and Data Analytics department, overseeing the organization’s website, maintenance portal, database workflows, and broader digital infrastructure while coordinating technical initiatives across the team.',
     tags: ['Leadership', 'Web Ops', 'Database', 'Technical Management'],
   },
   {
-    date: 'JUN 2025 — JUL 2025',
+    date: 'JUN 2025 - JUL 2025',
     role: 'Data Analysis Intern',
     company: 'Samatrix Consulting Pvt. Ltd. | Remote',
     desc: 'Worked on projects spanning finance, healthcare, e-commerce, and sports, including stock risk modeling, A/B testing, queue optimization, IPL data analysis, and survival analysis using Python-based analytical workflows.',
     tags: ['Python', 'Data Analysis', 'Statistics', 'Simulation'],
   },
   {
-    date: 'JUN 2025 — JUL 2025',
+    date: 'JUN 2025 - JUL 2025',
     role: 'Full-Stack Web Development Intern',
     company: 'IAESTE Burundi | Remote',
     desc: 'Selected for a global internship to build full-stack web applications using React.js, Node.js, APIs, and databases. Also developed the official website for IAESTE Burundi while gaining international collaborative software development experience.',
@@ -28,23 +28,23 @@ const work = [
 
 const education = [
   {
-    date: '2023 — 2027',
-    role: 'B.Tech — Computer Science (AI/ML - Samatrix)',
+    date: '2023 - 2027',
+    role: 'B.Tech - Computer Science (AI/ML - Samatrix)',
     company: 'JECRC University, Jaipur',
     desc: 'Currently in 3rd year, specializing in Artificial Intelligence and Machine Learning while continuing to build strength in full-stack development, data analysis, and practical product engineering.',
     tags: ['3rd Year', 'AI/ML', 'Full Stack', 'JECRC University'],
   },
   {
-    date: '2020 — 2022',
+    date: '2020 - 2022',
     role: 'Senior Secondary Education',
     company: 'Asian Public School, Sohna, Haryana',
     desc: 'Completed secondary education before starting the B.Tech journey. This foundation led into your current technical track in Computer Science with AI/ML specialization.',
     tags: ['Schooling', 'Haryana', 'Academic Foundation'],
   },
   {
-    date: '2018 — 2020',
-    role: '9th - 10th CBSE',
-    company: 'Raath International School',
+    date: '2018 - 2020',
+    role: 'Secondary Education',
+    company: 'Raath International School, Alwar, Rajasthan',
     desc: 'Completed foundational school education under the CBSE curriculum before moving into senior secondary studies and later into Computer Science.',
     tags: ['CBSE', 'Raath International School', 'Schooling'],
   },

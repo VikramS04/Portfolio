@@ -103,9 +103,9 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="section-shell px-6 py-20 text-center md:px-12" style={{ background: 'var(--section-bg)' }}>
+    <section id="contact" className="section-shell px-6 py-20 text-center md:px-12 -mt-20" style={{ background: 'var(--section-bg)' }}>
       <div className="mx-auto max-w-5xl">
-        <div className="flex justify-center">
+        <div className="flex justify-center text-accent ">
           <SectionHeader label="Contact" title="Let's Connect" />
         </div>
 
@@ -114,9 +114,9 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-6 text-[clamp(2.8rem,7vw,5.4rem)] font-extrabold leading-[0.95] tracking-[-0.05em]"
+          className="mb-6 text-[clamp(2rem,5vw,4rem)] font-extrabold leading-[0.95] tracking-[-0.05em] -mt-8"
         >
-          Let&apos;s Build
+          And Build
           <br />
           <span style={{ color: 'var(--accent)' }}>Something</span>
           <br />
@@ -132,7 +132,7 @@ export default function Contact() {
           style={{ color: 'var(--muted)' }}
         >
           Open to internships, collaborations, learning opportunities, and thoughtful conversations
-          around web development, AI/ML, and product-building.
+          around development, AI/ML, and product-building.
         </motion.p>
 
         <motion.div
@@ -152,7 +152,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.35 }}
-          className="grid gap-6 md:grid-cols-[1.05fr_0.95fr]"
+          className="grid gap-6"
         >
           <div className="glass-panel rounded-[30px] p-6 text-left md:p-8">
             <div className="mb-3 font-mono text-[0.7rem] uppercase tracking-[0.18em]" style={{ color: 'var(--accent2)' }}>
@@ -198,6 +198,7 @@ export default function Contact() {
                 onChange={handleChange}
                 placeholder="Tell me about your idea or opportunity"
                 multiline
+                rows={4}
               />
 
               <button
@@ -237,7 +238,7 @@ export default function Contact() {
             </form>
           </div>
 
-          <div className="glass-panel flex flex-col justify-between rounded-[30px] p-6 text-left md:p-8">
+          {/* <div className="glass-panel flex flex-col justify-between rounded-[30px] p-6 text-left md:p-8">
             <div>
               <div className="mb-3 font-mono text-[0.7rem] uppercase tracking-[0.18em]" style={{ color: 'var(--accent2)' }}>
                 Contact Details
@@ -264,7 +265,7 @@ export default function Contact() {
             >
              
             </div>
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </section>
@@ -279,6 +280,7 @@ function Field({
   onChange,
   placeholder,
   multiline = false,
+  rows = 6
 }) {
   const sharedProps = {
     name,
@@ -301,7 +303,7 @@ function Field({
         {label}
       </span>
       {multiline ? (
-        <textarea {...sharedProps} rows={6} />
+        <textarea {...sharedProps} rows={rows} />
       ) : (
         <input {...sharedProps} type={type} />
       )}
