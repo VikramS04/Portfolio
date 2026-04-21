@@ -9,8 +9,8 @@ export const siteContent = {
   github: 'https://github.com/VikramS04',
   linkedin: 'https://www.linkedin.com/in/vikram-saini-0b35ab207/',
   avatar: 'https://github.com/VikramS04.png',
-  heroImage: '/vikram-avatar.avif',
-  resumeFile: '/vikram-resume.pdf',
+  heroImage: '/assets/vikram-avatar.avif',
+  resumeFile: '/assets/vikram-resume.pdf',
   bio:
     'Portfolio of Vikram Saini, a 3rd-year B.Tech Computer Science student at JECRC University specializing in AI/ML, full-stack web development, data analysis, and product-focused digital experiences.',
   keywords: [
