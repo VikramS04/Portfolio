@@ -58,8 +58,7 @@ export default function Projects() {
 
         <div className="mb-6 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <p className="max-w-2xl text-[0.97rem] leading-7 md:text-base" style={{ color: 'var(--muted)' }}>
-            This section now reflects the stronger project information from your resume and IAESTE factsheets:
-            hackathon work, backend systems, manufacturing monitoring concepts, and analytical internship projects.
+            A curated selection of projects showcasing my work across full-stack development, backend systems, system design, and data analysis. Each project reflects a focus on solving real-world problems through scalable and practical solutions.
           </p>
           <a
             href="https://github.com/VikramS04"
