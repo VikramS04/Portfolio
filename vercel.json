@@ -1,7 +1,7 @@
 {
   "headers": [
     {
-      "source": "/vikram-avatar.avif",
+      "source": "/assets/vikram-avatar.avif",
       "headers": [
         {
           "key": "Cache-Control",

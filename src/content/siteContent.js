@@ -17,6 +17,9 @@ export const siteContent = {
     'Vikram Saini',
     'Vikram Saini portfolio',
     'Full Stack Web Developer portfolio',
+    'Full-Stack Web Developer',
+    'React Developer',
+    'Node.js Developer',
     'React portfolio',
     'Vite portfolio',
     'Tailwind portfolio',
@@ -28,51 +31,51 @@ export const siteContent = {
 
 export const sectionSeo = {
   home: {
-    title: 'Vikram Saini | Full-Stack Web Developer and AI/ML Student',
+    title: 'Vikram Saini | Full-Stack Developer Portfolio',
     description:
-      'Portfolio of Vikram Saini featuring full-stack projects, data analysis experience, AI/ML learning, and leadership in technical roles at IAESTE LC JECRC.',
+      'Vikram Saini portfolio with React projects, full-stack work, AI/ML learning, and data analysis experience.',
     path: '',
     type: 'website',
   },
   about: {
     title: 'About Vikram Saini | Portfolio',
     description:
-      'Learn about Vikram Saini, a 3rd-year JECRC University student focused on full-stack development, AI/ML, data analysis, and technical leadership.',
+      'About Vikram Saini, a JECRC student focused on full-stack development, AI/ML, data analysis, and leadership.',
     path: '#about',
     type: 'profile',
   },
   skills: {
     title: 'Skills | Vikram Saini Portfolio',
     description:
-      'Explore Vikram Saini’s skills across React, Node.js, Express.js, MySQL, MongoDB, Python, data analysis, AI/ML tooling, and full-stack development.',
+      'Explore Vikram Saini’s React, Node.js, Express.js, MySQL, Python, AI/ML, and data analysis skills.',
     path: '#skills',
     type: 'website',
   },
   certificates: {
     title: 'Certificates and Resume | Vikram Saini Portfolio',
     description:
-      'Review Vikram Saini’s certifications across React, full-stack development, AI, data analysis, and technical learning, along with a downloadable resume.',
+      'Review Vikram Saini’s certificates in React, full-stack development, AI, data analysis, and resume details.',
     path: '#certificates',
     type: 'website',
   },
   projects: {
     title: 'Projects | Vikram Saini Portfolio',
     description:
-      'Browse Vikram Saini’s featured projects including Krishi AI, Track-it, and ManuSight across full-stack engineering, backend systems, and data-driven applications.',
+      'Browse Vikram Saini’s projects including Krishi AI, Track-it, ManuSight, backend systems, and data apps.',
     path: '#projects',
     type: 'website',
   },
   experience: {
     title: 'Experience and Education | Vikram Saini Portfolio',
     description:
-      'See Vikram Saini’s experience at Samatrix Consulting, IAESTE Burundi, and IAESTE India LC JECRC along with his AI/ML-focused B.Tech journey.',
+      'See Vikram Saini’s Samatrix, IAESTE Burundi, IAESTE LC JECRC experience, education, and AI/ML journey.',
     path: '#experience',
     type: 'website',
   },
   contact: {
     title: 'Contact Vikram Saini | Portfolio',
     description:
-      'Connect with Vikram Saini through LinkedIn, GitHub, or email for internships, collaborations, and technical opportunities.',
+      'Contact Vikram Saini through LinkedIn, GitHub, or email for internships, collaborations, and tech work.',
     path: '#contact',
     type: 'website',
   },

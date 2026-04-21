@@ -33,6 +33,13 @@ export default function Cursor() {
   const rafRef = useRef(null);
 
   useEffect(() => {
+    const shouldSkipCursor =
+      window.matchMedia('(pointer: coarse)').matches ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+      window.innerWidth < 900;
+
+    if (shouldSkipCursor) return undefined;
+
     const onMove = (e) => {
       mouse.current = { x: e.clientX, y: e.clientY };
       if (dotRef.current) {
@@ -76,8 +83,21 @@ export default function Cursor() {
     return () => {
       document.removeEventListener('mousemove', onMove);
       cancelAnimationFrame(rafRef.current);
+      interactables.forEach((el) => {
+        el.removeEventListener('mouseenter', onEnter);
+        el.removeEventListener('mouseleave', onLeave);
+      });
     };
   }, []);
+
+  if (typeof window !== 'undefined') {
+    const shouldHideCursor =
+      window.matchMedia('(pointer: coarse)').matches ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+      window.innerWidth < 900;
+
+    if (shouldHideCursor) return null;
+  }
 
   return (
     <>

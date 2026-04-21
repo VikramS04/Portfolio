@@ -39,25 +39,21 @@ export default function App() {
 
   return (
     <>
-      <Loader onDone={() => setLoaded(true)} />
-      {loaded && (
-        <>
-          <SeoManager />
-          <ScrollProgress />
-          <Cursor />
-          <Navbar theme={theme} onToggleTheme={toggleTheme} />
-          <main>
-            <Hero />
-            <About />
-            <Skills />
-            <Projects />
-            <Experience />
-            <Certificates />
-            <Contact />
-          </main>
-          <Footer />
-        </>
-      )}
+      {!loaded && <Loader onDone={() => setLoaded(true)} />}
+      <SeoManager />
+      <ScrollProgress />
+      <Cursor />
+      <Navbar theme={theme} onToggleTheme={toggleTheme} />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Experience />
+        <Certificates />
+        <Contact />
+      </main>
+      <Footer />
     </>
   );
 }

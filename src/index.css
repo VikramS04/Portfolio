@@ -93,6 +93,11 @@ a {
   color: inherit;
 }
 
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
 #root {
   min-height: 100vh;
 }
@@ -167,6 +172,11 @@ body::before {
   }
   body {
     cursor: auto;
+  }
+
+  a,
+  button {
+    min-height: 44px;
   }
 
   #hero {

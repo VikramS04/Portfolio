@@ -199,7 +199,11 @@ export default function Hero() {
             <style>{`@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}`}</style>
           </motion.div>
 
-          <h1 className="mb-4 hidden max-w-3xl text-[clamp(2.5rem,5vw,4.4rem)] font-bold leading-[0.98] tracking-[-0.05em] md:block">
+          <div
+            role="heading"
+            aria-level="1"
+            className="mb-4 hidden max-w-3xl text-[clamp(2.5rem,5vw,4.4rem)] font-bold leading-[0.98] tracking-[-0.05em] md:block"
+          >
             <motion.span
               initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
@@ -217,7 +221,7 @@ export default function Hero() {
             >
               Vikram Saini
             </motion.span>
-          </h1>
+          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}

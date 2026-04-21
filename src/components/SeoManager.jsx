@@ -86,6 +86,7 @@ export default function SeoManager() {
           ? window.location.origin
           : siteContent.siteUrl;
       const pageUrl = `${siteUrl}/${meta.path}`.replace(/\/#/, '/#');
+      const canonicalUrl = `${siteUrl}/`;
 
       document.title = meta.title;
 
@@ -108,7 +109,7 @@ export default function SeoManager() {
       upsertMeta('meta[name="twitter:card"]', 'content', 'summary_large_image');
 
       const canonical = document.getElementById('canonical-link');
-      if (canonical) canonical.setAttribute('href', pageUrl);
+      if (canonical) canonical.setAttribute('href', canonicalUrl);
 
       updateStructuredData(sectionKey, siteUrl);
     };
