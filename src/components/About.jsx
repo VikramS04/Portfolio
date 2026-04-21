@@ -12,7 +12,7 @@ const stats = [
 const infoRows = [
   { key: '// location', val: 'Jaipur, Rajasthan, India' },
   { key: '// focus', val: 'Full-stack web development · AI/ML · data analysis' },
-  { key: '// leadership', val: 'Head of IT & Data Analytics, IAESTE India LC JECRC' },
+  { key: '// leadership', val: 'Head, Information Technology & Data Analytics at IAESTE India LC JECRC' },
   { key: '// seeking', val: 'Internships · global exposure · growth-focused teams' },
 ];
 
@@ -52,9 +52,9 @@ export default function About() {
                 <div>&nbsp;&nbsp;<Pr>name</Pr>: <Str>"Vikram Saini"</Str>,</div>
                 <div>&nbsp;&nbsp;<Pr>education</Pr>: <Str>"B.Tech CSE (AI/ML), JECRC University"</Str>,</div>
                 <div>&nbsp;&nbsp;<Pr>year</Pr>: <Str>"3rd Year"</Str>,</div>
-                <div>&nbsp;&nbsp;<Pr>currentFocus</Pr>: [<Str>"React"</Str>, <Str>"Node.js"</Str>, <Str>"Data Analysis"</Str>],</div>
+                <div>&nbsp;&nbsp;<Pr>currentFocus</Pr>: [<Str>"DSA"</Str>, <Str>"Backend"</Str>, <Str>"System Design"</Str>],</div>
                 <div>&nbsp;&nbsp;<Pr>email</Pr>: <Str>"vikramsaini7723@gmail.com"</Str>,</div>
-                <div>&nbsp;&nbsp;<Pr>leadership</Pr>: <Str>"Head of IT & Data Analytics @ IAESTE LC JECRC"</Str>,</div>
+                <div>&nbsp;&nbsp;<Pr>currentRole</Pr>: <Str>"Head, IT-DA at IAESTE LC JECRC"</Str>,</div>
                 <div>&nbsp;&nbsp;<Pr>status</Pr>: <Str>"Open to opportunities"</Str></div>
                 <div>{'}'};</div>
               </div>
@@ -80,7 +80,7 @@ export default function About() {
             <div className="glass-panel rounded-[28px] p-6 md:p-7">
               <p className="mb-4 text-[0.97rem] leading-7 md:text-base" style={{ color: 'var(--muted)' }}>
                 I am a <strong style={{ color: 'var(--text)' }}>3rd-year Computer Science student</strong> at
-                {' '}JECRC University, Jaipur, specializing in <strong style={{ color: 'var(--accent)' }}>AI/ML under the Samatrix track</strong> while actively building strength in{' '}
+                {' '}JECRC University, Jaipur, specializing in <strong style={{ color: 'var(--accent)' }}>AI/ML under the Samatrix.io</strong> while actively building strength in{' '}
                 <strong style={{ color: 'var(--accent2)' }}>full-stack web development</strong>.
               </p>
               <p className="mb-4 text-[0.97rem] leading-7 md:text-base" style={{ color: 'var(--muted)' }}>
